@@ -17,13 +17,24 @@ let transporter = nodemailer.createTransport({
   port: 465,
   secure: true, // true for 465, false for other ports
   auth: {
-    user: account.user, // generated ethereal user
-    pass: account.pass // generated ethereal password
+    user: account.user,
+    pass: account.pass
   }
 })
 
-function sendEmail (mailOptions) {
-
+const sendEmail=async (mailOptions)=> {
+  const template = ejs.compile(
+    fs.readFileSync(
+      path.resolve(__dirname, '..', 'view', 'list.ejs'),
+      'utf8'
+    )
+  )
+  const html = template({
+    dataList:mailOptions.dataList
+  })
+  let time = utils.timetrans()
+  mailOptions.html=html
+  mailOptions.subject+=`--${time}`
   // setup email data with unicode symbols
   // let mailOptions = {
   //   from: `"吕总女秘书 👻" <${account.user}>`, // sender address
@@ -46,17 +57,7 @@ function sendEmail (mailOptions) {
     })
   })
 }
-exports.sendTest = async (dataList)=>{
-  const template = ejs.compile(
-    fs.readFileSync(
-      path.resolve(__dirname, '..', 'view', 'list.ejs'),
-      'utf8'
-    )
-  )
-  const html = template({
-    dataList
-  })
-  let time = utils.timetrans()
+const sendTest = async (dataList)=>{
   let mailOptions = {
     from: `"test 👻" <${account.user}>`, // sender address
     to: config.emailTo, // list of receivers
@@ -66,4 +67,8 @@ exports.sendTest = async (dataList)=>{
     html: html // html body
   }
   await sendEmail(mailOptions)
+}
+module.exports={
+  sendEmail,
+  sendTest
 }

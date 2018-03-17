@@ -6,6 +6,6 @@ const router = require('koa-router')()
 const adminController = require('./../controllers/admin')
 
 const routers = router
-  .post('/admin/getAdmin', adminController.getAdmins)
+  .post('/getAdmin', adminController.getAdmins)
 
 module.exports = routers

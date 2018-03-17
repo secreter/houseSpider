@@ -28,7 +28,7 @@ class MobileData extends Component{
     console.log(this.state)
     let that=this
     const {username,password} =this.state
-    axios.post('/admin/admin/getAdmin', {
+    axios.post('/admin/getAdmin', {
       username,
       password
     })

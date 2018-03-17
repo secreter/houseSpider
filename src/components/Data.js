@@ -1,100 +1,65 @@
-import React, { Component } from 'react';
-import { Table, Input, Button, Icon } from 'antd';
-import axios from 'axios';
-
+import React, { Component } from 'react'
+import { Table, Button } from 'antd'
+import axios from 'axios'
+import '../styles/data.css'
 
 class Data extends Component {
-	state = {
+  state = {
     filterDropdownVisible: false,
-    data:[],
+    data: [],
     searchText: '',
     filtered: false,
-    total:0,
-    size:10,
-    curPage:1
+    total: 0,
+    size: 10,
+    curPage: 1,
+    sortedInfo: {
+      order: '',
+      columnKey: '',
+    },
+    filteredInfo:{
+
+    }
   };
-	componentWillMount(){
-	  this.getTotal()
-    this.init()
+
+  componentWillMount () {
+    this.getData()
   }
-  getTotal(){
-	  let that=this
-    let queryObj= {
-      table: 'reserve',
-      field: {
-        //查询的域和类型
-        id:'i',
-      },
-      orderby: {
-        id: 0   //降序
-      },
-    }
-    let query=JSON.stringify(queryObj)
-    axios.post('https://project.redream.cn/lafeiya/backend/get_data.php', {
-      query
+
+  getData (page = this.state.curPage) {
+    axios.post('/house/getData', {
+      offset:(page-1)*this.state.size
     })
-      .then(function (response) {
-        that.setState({
-          total:response.data.data.length
+      .then((response) => {
+        console.log(response)
+        this.setState({
+          total: response.data.data.total,
+          data: response.data.data.list
         })
       })
       .catch(function (error) {
         console.log(error);
       });
   }
-  init(page=this.state.curPage){
-    let that=this,num=this.state.size
-    let queryObj= {
-      table: 'reserve',
-      field: {
-        //查询的域和类型
-        id:'i',
-        username: 's',
-        nickname: 's',
-        sex: 's',
-        city: 's',
-        phonenumber: 's',
-        hairstylist: 's',
-        date: 's',
-        time: 's',
-        remark: 's',
-        status: 'i',
-        curtime:'i'
-      },
-      orderby: {
-        curtime: 0   //降序
-      },
-      limit: {
-        from: (page-1)*num,
-        num: num,
-      }
-    }
-    let query=JSON.stringify(queryObj)
-    axios.post('https://project.redream.cn/lafeiya/backend/get_data.php', {
-      query
-    })
-      .then(function (response) {
-        console.log(response);
-        that.setState({
-          data:response.data.data
-        })
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  }
-  onPageChange=(page)=>{
+
+  onPageChange = (page) => {
     console.log(page)
-    this.init(page)
+    this.getData(page)
     this.setState({
-      curPage:page
+      curPage: page,
     })
+  }
+  handleTableChange=(pagination, filters, sorter) => {
+    console.log('Various parameters', pagination, filters, sorter);
+    this.setState({
+      filteredInfo: filters,
+      sortedInfo: sorter,
+    });
   }
   onInputChange = (e) => {
-    this.setState({ searchText: e.target.value });
+    this.setState({searchText: e.target.value});
   }
   onSearch = () => {
-    const { searchText,data } = this.state;
+    const {searchText, data} = this.state;
     const reg = new RegExp(searchText, 'gi');
     this.setState({
       filterDropdownVisible: false,
@@ -117,81 +82,102 @@ class Data extends Component {
       }).filter(record => !!record),
     });
   }
-  changeStatus(id){
-    console.log(id)
-    let that=this
-    axios.post('https://project.redream.cn/lafeiya/backend/deal.php', {
-      id
-    })
-      .then(function (response) {
-        console.log(response);
-        that.init()
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  }
-  render() {
+
+  render () {
+    const {sortedInfo}=this.state
     const columns = [
       {
-        title: '昵称',
-        dataIndex: 'nickname',
-        key: 'nickname',
-      },{
-      title: '称呼',
-      dataIndex: 'username',
-      key: 'username',
-    }, {
-      title: '性别',
-      dataIndex: 'sex',
-      key: 'sex',
-      filters: [{
-        text: '男',
-        value: '男',
-      }, {
-        text: '女',
-        value: '女',
-      }],
-      onFilter: (value, record) => record.sex.indexOf(value) === 0,
-    }, {
-      title: '城市',
-      dataIndex: 'city',
-      key: 'city',
-    }, {
-      title: '电话',
-      dataIndex: 'phonenumber',
-      key: 'phonenumber',
-    }, {
-      title: '发型师',
-      dataIndex: 'hairstylist',
-      key: 'hairstylist',
-    }, {
-      title: '日期',
-      dataIndex: 'date',
-      key: 'date',
-    }, {
-      title: '时间',
-      dataIndex: 'time',
-      key: 'time',
-    }, {
-      title: '备注',
-      dataIndex: 'remark',
-      key: 'remark',
-    }, {
-      title: '状态',
-      dataIndex: 'status',
-      key: 'status',
-        render: (status,record )=> {
-          if(status==1){
-           return <Button disabled>已处理</Button>
-          }else{
-            return <Button type="primary" onClick={this.changeStatus.bind(this,record['id'])}>未处理</Button>
-          }
+        title:'图片',
+        dataIndex:'picture',
+        key:'picture',
+        fixed:'left',
+        render: (url, record) => {
+            return <img src={url} width={60}></img>
         },
-    }
+      },
+      {
+        title: '标题',
+        dataIndex: 'title',
+        key: 'title',
+        width:160
+      }, {
+        title: '价格',
+        dataIndex: 'price',
+        key: 'price',
+        width:80
+      }, {
+        title: '面积',
+        dataIndex: 'area',
+        key: 'area',
+        width:80,
+        sorter: (a, b) => parseInt(a.area) - parseInt(b.area),
+        sortOrder: sortedInfo.columnKey === 'area' && sortedInfo.order,
+      }, {
+        title: '城市',
+        dataIndex: 'city',
+        key: 'city',
+        width:80
+      }, {
+        title: '联系人',
+        dataIndex: 'connectPerson',
+        key: 'connectPerson',
+        width:80
+      }, {
+        title: '电话',
+        dataIndex: 'phoneNumber',
+        key: 'phoneNumber',
+        width:120
+      }, {
+        title: '发型师',
+        dataIndex: 'hairstylist',
+        key: 'hairstylist',
+      }, {
+        title: '日期',
+        dataIndex: 'date',
+        key: 'date',
+      }, {
+        title: '网站',
+        dataIndex: 'website',
+        key: 'website',
+        filters: [{
+          text: '58同城',
+          value: 'house58',
+        }, {
+          text: '安居客',
+          value: 'anjuke',
+        }],
+        onFilter: (value, record) => record.sex.indexOf(value) === 0,
+      }, {
+        title: '描述',
+        dataIndex: 'desc',
+        key: 'desc',
+        width:200,
+        render: (text, record) => {
+            return <div title={text} className="data-desc">{text}</div>
+        },
+      }, {
+        title: '查看',
+        dataIndex: '_url',
+        key: '_url',
+        width:80,
+        fixed:'right',
+        render: (_url, record) => {
+              return <a href={_url}>查看</a>
+        },
+      }
 
     ];
-    return <Table columns={columns} dataSource={this.state.data} pagination={{pageSize:this.state.size,onChange:this.onPageChange,total:this.state.total}} />;
+    return <Table columns={columns}
+                  rowKey="id"
+                  style={{background:'#fff'}}
+                  dataSource={this.state.data}
+                  onChange={this.handleTableChange }
+                  pagination={{
+                    showTotal:(total, range) => `${range[0]}-${range[1]} of ${total} items`,
+                    pageSize: this.state.size,
+                    onChange: this.onPageChange,
+                    total: this.state.total
+                  }} />;
   }
 }
 

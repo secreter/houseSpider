@@ -78,7 +78,9 @@ module.exports = function(proxy, allowedHost) {
     },
     // public: allowedHost,
     proxy:{
-      "/admin": "http://localhost:5005"
+      "/admin": "http://localhost:5005",
+      "/user": "http://localhost:5005",
+      "/house": "http://localhost:5005",
     },
     setup(app) {
       // This lets us open files from the runtime error overlay.

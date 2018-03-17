@@ -102,6 +102,11 @@ const timetrans = () => {
   return Y + M + D + h + m + s
 }
 
+escapeStringRegExp.matchOperatorsRe = /[|\\{}()[\]^$+*?.]/g;
+function escapeStringRegExp(str) {
+  return str.replace(escapeStringRegExp.matchOperatorsRe, '\\$&');
+}
+
 module.exports = {
   getPageUrlsFnGenerator,
   getPageAHrefs,
@@ -109,5 +114,6 @@ module.exports = {
   filterUrls,
   uniqueDataList,
   timetrans,
-  sleep
+  sleep,
+  escapeStringRegExp
 }
