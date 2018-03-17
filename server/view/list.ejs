@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>最新消息推送</title>
+    <style type="text/css">
+        body {
+            padding: 20px 0px;
+            background: #eaeaea;
+        }
+        #list {
+        }
+        ul {
+            list-style-type: none;
+            max-width: 600px;
+            margin: 0 auto;
+            width: 100%;
+            margin-top: 30px;
+            padding: 0 0px;
+        }
+        li {
+            background: white;
+            border-radius: 8px;
+            margin-top: 20px;
+            overflow: hidden;
+            padding: 10px;
+            position: relative;
+        }
+        .header{
+            display: flex;
+            width: 100%;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+        .header-right{
+            display: flex;
+            flex-grow: 1;
+            flex-direction: column;
+            padding: 10px;
+
+        }
+        .title-line{
+            display: flex;
+            justify-content: space-between;
+            font-size: 18px;
+            color: #49A9EE;
+
+        }
+        .time-line{
+            font-size: 12px;
+            color: #999;
+        }
+        .tag-line{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .tag{
+            padding: 2px 5px;
+            margin: 2px 5px;
+            background: #ffdd76;
+            font-size: 14px;
+        }
+        .desc{
+            margin: 5px 0;
+            overflow : hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 5;
+            -webkit-box-orient: vertical;
+            font-size: 14px;
+            color: #888;
+        }
+        .desc p{
+            margin: 2px;
+        }
+        .avatar {
+            background: #eaeaea;
+            border-radius: 4px;
+            display: inline-block;
+            width: 80px;
+            height: 80px;
+            flex-shrink: 0;
+            background-size: cover;
+        }
+        .lines {
+            display: inline-block;
+            height: 80px;
+            margin-left: 20px;
+            width: calc(100% - 100px);
+        }
+        .lines:before, .lines:after {
+            background: #eaeaea;
+            content: ' ';
+            display: block;
+            margin-bottom: 10px;
+            width: 100%;
+            height: 10px;
+        }
+    </style>
+</head>
+<body>
+<div id="list">
+    <ul>
+        <% dataList.forEach(function(data){ %>
+        <li>
+            <a class="header" href="<%= data._url %>">
+                <div class="avatar" style="background-image: url(<%= data.picture %>)"></div>
+                <div class="header-right">
+                    <div class="title-line">
+                        <div class="title">
+                            <%= data.title %>
+                        </div>
+                    </div>
+                    <div class="time-line">
+                        <%= data.time %>
+                    </div>
+
+                </div>
+            </a>
+            <div class="body">
+                <div class="tag-line">
+                    <div class="tag"><%= data.payWay %></div>
+                    <div class="tag"><%= data.rentWay %></div>
+                    <div class="tag"><%= data.type %></div>
+                    <div class="tag"><%= data.status %></div>
+                </div>
+                <div class="desc">
+                    <p>价格：<%= data.price %></p>
+                    <p>地址：<%= data.address %></p>
+                    <p>联系人：<%= data.connectPerson %></p>
+                    <p>电话：<%= data.phoneNumber %></p>
+                </div>
+            </div>
+        </li>
+        <% }) %>
+    </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+
+.panel{
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+}
+.panel_body{
+	flex-grow: 1;
+	height: 100%;
+	display: flex;
+
+}
+.panel_side-menu{
+	height: 100%;
+	width: 20%;
+	max-width: 240px ;
+	background: #404040;
+}
+.panel_main{
+	overflow: scroll;
+	flex-grow: 1;
+	padding: 20px;
+}
+.tree{
+	background: #fff;
+}
+.header{
+
+}
+.logo{
+    width: 140px;
+    height: 44px;
+    background: #eeeeee;
+    border-radius: 6px;
+    margin: 10px 28px 10px -16px;
+    background-size: cover;
+    float: left;
+    background-image: url("../images/logo.jpg");
+}
+/*"draft-js": "^0.10.1","react-umeditor": "^1.0.0-rc6",
+    "react-draft-editor": "^1.0.0",
+*/
