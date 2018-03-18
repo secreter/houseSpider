@@ -15,7 +15,7 @@ const schema58List=(citys)=>{
     newConfig58.dataSchema.website='house58'        //这个是动态加的
     newConfig58.interval=8000        //这个是动态加的
     newConfig58.seed=`http://${shortCity}.58.com/shangpucz/pn1/`
-    newConfig58.urlSchema.url[0].regex=`http:\\/\\/${shortCity}.58.com\\/shangpucz\\/pn[0-2]+\\/\\?.*`
+    newConfig58.urlSchema.url[0].regex=`http:\\/\\/${shortCity}.58.com\\/shangpucz\\/pn[0-1]+\\/\\?.*`
     newConfig58.urlSchema.url[1].regex=`http:\\/\\/${shortCity}.58.com\\/shangpu\\/.+\\.shtml`
     return newConfig58
   })
@@ -41,8 +41,20 @@ const schemaGanjiwangList=(citys)=>{
   })
 }
 
+const getSchemas=(citys)=>{
+  let list58=schema58List(citys)
+  let listGanjiwang=schemaGanjiwangList(citys)
+  let list=[]      //交叉进行，间歇爬取
+  for(let i=0;i<citys.length;i++){
+    list.push(list58.pop())
+    list.push(listGanjiwang.pop())
+  }
+  return list
+}
+
 
 module.exports={
   schema58List,
-  schemaGanjiwangList
+  schemaGanjiwangList,
+  getSchemas
 }

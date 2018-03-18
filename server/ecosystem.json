@@ -1,0 +1,14 @@
+{
+  "apps" : [
+    {
+      "name"      : "house_spider",
+      "max_memory_restart": "300M",
+      "script"    : "server/app.js",
+      "out_file" : "logs/app_out.log",
+      "error_file" : "logs/app_error.log",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    }
+  ]
+}

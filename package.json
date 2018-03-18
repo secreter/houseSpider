@@ -65,6 +65,7 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
+    "pm2": "pm2 start server/app.js",
     "server": "nodemon server/app.js",
     "spider": "node server/spider/app.js",
     "build": "node scripts/build.js",
@@ -113,6 +114,7 @@
     "extends": "react-app"
   },
   "devDependencies": {
-    "nodemon": "^1.17.2"
+    "nodemon": "^1.17.2",
+    "pm2": "^2.10.1"
   }
 }

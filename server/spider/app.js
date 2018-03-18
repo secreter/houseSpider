@@ -6,7 +6,7 @@ const utils = require('../lib/utils')
 const emailController = require('../controllers/email')
 const Spider = require('../lib/Spider')
 const houseController = require('../controllers/house')
-const {schema58List,schemaGanjiwangList} = require('../spiderSchema/schemaGenerate')
+const {schema58List,schemaGanjiwangList,getSchemas} = require('../spiderSchema/schemaGenerate')
 const config58 = require('../spiderSchema/config58')
 const configAnjuke = require('../spiderSchema/configAnjuke')
 const configGangjiwang = require('../spiderSchema/configGangjiwang')
@@ -22,7 +22,7 @@ const main = async () => {
   // let dataList = await spider.start(config_58)
   // length-1 跳过安居客
   //几个网站交叉爬，避免过于频繁
-  schemas=schema58List(CITYS)
+  schemas=getSchemas(CITYS)
   for (let i = 0; i < schemas.length ; i++) {
     let dataList = await spider.start(schemas[i])
 
