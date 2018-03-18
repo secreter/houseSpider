@@ -20,4 +20,8 @@ router.use('/admin', admin.routes(), admin.allowedMethods())
 router.use('/house', house.routes(), house.allowedMethods())
 router.use('/task', task.routes(), task.allowedMethods())
 // router.use('/error', error.routes(), error.allowedMethods())
+router.use(async (ctx, next) => {
+  // redirect to named route
+  await ctx.redirect(ctx.router.url('/'));
+})
 module.exports = router

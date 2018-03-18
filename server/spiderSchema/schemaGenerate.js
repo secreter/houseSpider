@@ -26,13 +26,13 @@ const schemaGanjiwangList=(citys)=>{
     let newConfigGanjiwang=_.cloneDeep(configGanjiwang)
     newConfigGanjiwang.dataSchema.city=city        //这个是动态加的
     newConfigGanjiwang.dataSchema.website='ganjiwang'        //这个是动态加的
-    newConfigGanjiwang.interval=8000        //这个是动态加的
+    newConfigGanjiwang.interval=6000        //这个是动态加的
     newConfigGanjiwang.seed=`http://${shortCity}.ganji.com/fang6/c2/`
     newConfigGanjiwang.urlSchema.url=[
-      {
-        regex: `http:\\/\\/${shortCity}\\.ganji\\.com\\/fang6\\/o[2-3]c2\\/$`,
-        go: true
-      },
+      // {
+      //   regex: `http:\\/\\/${shortCity}\\.ganji\\.com\\/fang6\\/o[2-3]c2\\/$`,
+      //   go: true
+      // },
       {
         regex: `http:\\/\\/${shortCity}\\.ganji\\.com\\/fang6\\/[0-9a-z]+\\.htm`
       }

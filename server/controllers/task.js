@@ -118,11 +118,11 @@ const getTaskInfo = async (ctx) => {
 }
 
 initQueue().then(data => {
-  clearTask().then(()=>{
-
-  }).catch(e=>{
-
-  })
+  // clearTask().then(()=>{
+  //
+  // }).catch(e=>{
+  //
+  // })
 }).catch(e => {
   console.log(e)
 })

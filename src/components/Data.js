@@ -102,7 +102,7 @@ class Data extends Component {
         width:60,
         fixed:'left',
         render: (_url, record) => {
-          return <a href={_url}>查看</a>
+          return <a target="_blank" href={_url}>查看</a>
         },
       },
       {
@@ -152,7 +152,10 @@ class Data extends Component {
         title: '抓取时间',
         dataIndex: 'created',
         key: 'created',
-        width:150
+        width:150,
+        render: (time, record) => {
+          return <div>{new Date(time).toLocaleString()}</div>
+        },
       }, {
         title: '网站',
         dataIndex: 'website',

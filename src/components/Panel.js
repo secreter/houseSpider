@@ -105,7 +105,7 @@ class Panel extends Component {
               <Route path={publicPath+"/picture"} component={ChangPicture}/>
               <Route path={publicPath+"/myEditor"} component={MyEditor}/>
               <Route path={publicPath+"/mobileData"} component={MobileData}/>
-              {/*<Route path={publicPath+"/*"} component={Subscribe}/>*/}
+              <Route path={publicPath+"/*"} component={Subscribe}/>
             </Switch>
           </div>
         </Layout>
