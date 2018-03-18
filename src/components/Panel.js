@@ -99,14 +99,13 @@ class Panel extends Component {
           </Sider>
           <div className="panel_main">
             <Switch>
-              <Route path={'/lafeiya'+"/data"} component={Data}/>
               <Route path={publicPath+"/data"} component={Data}/>
               <Route path={publicPath+"/Subscribe"} component={Subscribe}/>
               <Route path={publicPath+"/User"} component={User}/>
               <Route path={publicPath+"/picture"} component={ChangPicture}/>
               <Route path={publicPath+"/myEditor"} component={MyEditor}/>
               <Route path={publicPath+"/mobileData"} component={MobileData}/>
-              <Route path={publicPath+"/*"} component={Data}/>
+              {/*<Route path={publicPath+"/*"} component={Subscribe}/>*/}
             </Switch>
           </div>
         </Layout>

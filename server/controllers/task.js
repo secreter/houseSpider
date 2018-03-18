@@ -7,7 +7,7 @@ const config = require('../config')
 const parser = require('cron-parser');
 const {sendEmail} = require('../controllers/email')
 const {getDataList} = require('../controllers/house')
-const queue = new Queue('send task', config.redis.db)
+const queue = new Queue(config.redis.bullQueueName, config.redis.db)
 
 
 const emailNewInfo = async (subscribeInfo) => {
