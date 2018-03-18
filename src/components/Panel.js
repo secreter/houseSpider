@@ -4,7 +4,8 @@ const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;
 
 import Data from './Data';
-import Message from './Message';
+import User from './User';
+import Subscribe from './Subscribe';
 import MyEditor from './Editor';
 import ChangPicture from './ChangPicture';
 import ShowCard from './ShowCard';
@@ -17,8 +18,6 @@ import {
   Switch
 } from 'react-router-dom'
 // import {browserHistory} from 'react-router';
-
-
 
 class Panel extends Component {
   state = {
@@ -79,13 +78,13 @@ class Panel extends Component {
               inlineCollapsed={this.state.collapsed}
             >
               <Menu.Item key="1">
-                <Link to={publicPath+"/message"}>
+                <Link to={publicPath+"/Subscribe"}>
                   <Icon type="notification" />
-                  <span>发布活动</span>
+                  <span>订阅通知</span>
                 </Link>
               </Menu.Item>
               <Menu.Item key="2">
-                <Link to={publicPath+"/ShowCard"}>
+                <Link to={publicPath+"/User"}>
                   <Icon type="inbox" />
                   <span>管理活动</span>
                 </Link>
@@ -118,8 +117,8 @@ class Panel extends Component {
             <Switch>
               <Route path={'/lafeiya'+"/data"} component={Data}/>
               <Route path={publicPath+"/data"} component={Data}/>
-              <Route path={publicPath+"/message"} component={Message}/>
-              <Route path={publicPath+"/ShowCard"} component={ShowCard}/>
+              <Route path={publicPath+"/Subscribe"} component={Subscribe}/>
+              <Route path={publicPath+"/User"} component={User}/>
               <Route path={publicPath+"/picture"} component={ChangPicture}/>
               <Route path={publicPath+"/myEditor"} component={MyEditor}/>
               <Route path={publicPath+"/mobileData"} component={MobileData}/>
@@ -222,6 +221,3 @@ class Panel extends Component {
 
 export default Panel;
 
-// <Route path="/data" component={Data}/>
-// 			    	<Route path="/message" component={Message}/>
-// 			    	<Route path="/myEditor" component={MyEditor}/>

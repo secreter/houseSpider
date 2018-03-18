@@ -1,7 +1,7 @@
 /**
  * Created by So on 2018/3/10.
  */
-const configGangjiwang = {
+const configGanjiwang = {
   seed: 'http://tj.ganji.com/fang6/m3000z99999o2/',
   urlSchema: {
     selector: 'a[href]', // 链接所在元素selector
@@ -97,4 +97,4 @@ const configGangjiwang = {
     ]
   }
 }
-module.exports = configGangjiwang
+module.exports = configGanjiwang

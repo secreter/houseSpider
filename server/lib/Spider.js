@@ -21,7 +21,7 @@ class Spider {
    */
   async start (config) {
     this.seed = config.seed
-    this.interval = config.interval || 4000
+    this.interval = config.interval || 5000
     this.maxDeepth = config.maxDeepth || 3
     this.queue = new Queue(true, item => item.url)
     this.historySet = new Set() // 记录爬过的url
@@ -89,6 +89,8 @@ class Spider {
         (schema, urlItem) => {
           let json = {}
           json['_url'] = urlItem.url
+          json['city'] = schema.city
+          json['website'] = schema.website  //添加的一些额外信息
           schema.data.forEach(node => {
             let ele = document.querySelector(node.selector)
             if (ele === null) {

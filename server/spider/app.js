@@ -6,12 +6,14 @@ const utils = require('../lib/utils')
 const emailController = require('../controllers/email')
 const Spider = require('../lib/Spider')
 const houseController = require('../controllers/house')
+const {schema58List,schemaGanjiwangList} = require('../spiderSchema/schemaGenerate')
 const config58 = require('../spiderSchema/config58')
 const configAnjuke = require('../spiderSchema/configAnjuke')
 const configGangjiwang = require('../spiderSchema/configGangjiwang')
 // configAnjuke 在ubuntu下报Error: net::ERR_TOO_MANY_REDIRECTS
 // const schemas = [config58, configGangjiwang, configAnjuke]
-const schemas = [ configAnjuke]
+let schemas = [ configAnjuke]
+const CITYS=['beijing','tianjin','shanghai']
 const main = async () => {
   let browser = await puppeteer.launch({ headless: false })
   let page = await browser.newPage()
@@ -19,24 +21,27 @@ const main = async () => {
   let sendList = [] // 新增的信息发送邮件
   // let dataList = await spider.start(config_58)
   // length-1 跳过安居客
+  //几个网站交叉爬，避免过于频繁
+  schemas=schemaGanjiwangList(CITYS)
   for (let i = 0; i < schemas.length ; i++) {
     let dataList = await spider.start(schemas[i])
 
-    let oldDataList = await houseController.getDataList(i)
+    let oldDataList = await houseController.getDataList(500)
     let newDataList = utils.uniqueDataList(dataList, oldDataList)
     console.log('dataList.length:', dataList.length)
-    await houseController.insertData(newDataList, i)
+    await houseController.insertData(newDataList)
     console.log('newDataList.length:', newDataList.length)
     sendList = sendList.concat(newDataList)
     console.log('i', i)
   }
+  console.log(new Date())
   // sendList = sendList.filter(item => {
   //   // 描述里带酒店、公寓的
   //   return /酒店|公寓/.test(item.desc)
   // })
   // console.log(sendList)
   if (sendList.length > 0) {
-    await emailController.sendTest(sendList)
+    // await emailController.sendTest(sendList)
   }
   await browser.close()
 }

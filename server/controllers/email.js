@@ -22,7 +22,7 @@ let transporter = nodemailer.createTransport({
   }
 })
 
-const sendEmail=async (mailOptions)=> {
+const sendEmail=async (mailOptions,dataList)=> {
   const template = ejs.compile(
     fs.readFileSync(
       path.resolve(__dirname, '..', 'view', 'list.ejs'),
@@ -30,7 +30,7 @@ const sendEmail=async (mailOptions)=> {
     )
   )
   const html = template({
-    dataList:mailOptions.dataList
+    dataList
   })
   let time = utils.timetrans()
   mailOptions.html=html
@@ -66,7 +66,7 @@ const sendTest = async (dataList)=>{
     text: '这是一封测试邮件。', // plain text body
     html: html // html body
   }
-  await sendEmail(mailOptions)
+  await sendEmail(mailOptions,dataList)
 }
 module.exports={
   sendEmail,

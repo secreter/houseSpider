@@ -1,6 +1,8 @@
 /**
  * Created by So on 2018/3/8.
  */
+const _=require('lodash')
+const moment=require('moment')
 /**
  * 工场函数，根据选择器和返回的属性来生成方法
  * 方法可获取页面上所有的指定选择器元素上的url
@@ -106,7 +108,21 @@ escapeStringRegExp.matchOperatorsRe = /[|\\{}()[\]^$+*?.]/g;
 function escapeStringRegExp(str) {
   return str.replace(escapeStringRegExp.matchOperatorsRe, '\\$&');
 }
-
+const timeListToCron=(timeList)=>{
+  //['09:00:00'],not empty
+  let minList=timeList.map((time)=>{
+    //分钟
+    return moment(time,"'HH:mm:ss").format('m')
+  })
+  minList=_.uniq(minList)
+  let hourList=timeList.map((time)=>{
+    //小时
+    return moment(time,"'HH:mm:ss").format('H')
+  })
+  hourList=_.uniq(hourList)
+  let cron=`${minList.join(',')} ${hourList.join(',')} * * *`
+  return cron
+}
 module.exports = {
   getPageUrlsFnGenerator,
   getPageAHrefs,
@@ -115,5 +131,6 @@ module.exports = {
   uniqueDataList,
   timetrans,
   sleep,
-  escapeStringRegExp
+  escapeStringRegExp,
+  timeListToCron
 }

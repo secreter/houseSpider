@@ -11,6 +11,7 @@ const HouseSchema = new mongoose.Schema(
     _url: String,
     city:String,
     title: String,
+    website: String,
     price: String,
     price_month: String,
     price_day: String,

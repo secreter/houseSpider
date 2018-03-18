@@ -10,7 +10,7 @@ const userController = require('../controllers/user')
 
 const routers = router
   .get('/getUserInfo', userController.getUsers)
-  // .post('/user/signIn.json', userController.getUsers)
+  .post('/subscribe', userController.subscribe)
   // .post('/user/signUp.json', userController.getUsers)
 
 module.exports = routers

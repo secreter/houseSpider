@@ -39,6 +39,7 @@
     "koa-router": "^7.4.0",
     "koa-static": "^4.0.2",
     "lodash": "^4.17.5",
+    "moment": "^2.21.0",
     "mongoose": "^5.0.10",
     "nodemailer": "^4.6.3",
     "object-assign": "4.1.1",
