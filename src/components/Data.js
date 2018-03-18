@@ -96,6 +96,16 @@ class Data extends Component {
         },
       },
       {
+        title: '查看',
+        dataIndex: '_url',
+        key: '_url',
+        width:60,
+        fixed:'left',
+        render: (_url, record) => {
+          return <a href={_url}>查看</a>
+        },
+      },
+      {
         title: '标题',
         dataIndex: 'title',
         key: 'title',
@@ -116,7 +126,18 @@ class Data extends Component {
         title: '城市',
         dataIndex: 'city',
         key: 'city',
-        width:80
+        width:80,
+        filters: [{
+          text: '北京',
+          value: 'beijing',
+        }, {
+          text: '天津',
+          value: 'tianjin',
+        },{
+          text: '上海',
+          value: 'shanghai',
+        }],
+        onFilter: (value, record) => record.city.indexOf(value) === 0,
       }, {
         title: '联系人',
         dataIndex: 'connectPerson',
@@ -128,25 +149,23 @@ class Data extends Component {
         key: 'phoneNumber',
         width:120
       }, {
-        title: '发型师',
-        dataIndex: 'hairstylist',
-        key: 'hairstylist',
-      }, {
-        title: '日期',
-        dataIndex: 'date',
-        key: 'date',
+        title: '抓取时间',
+        dataIndex: 'created',
+        key: 'created',
+        width:150
       }, {
         title: '网站',
         dataIndex: 'website',
         key: 'website',
+        width:100,
         filters: [{
           text: '58同城',
           value: 'house58',
         }, {
-          text: '安居客',
-          value: 'anjuke',
+          text: '赶集网',
+          value: 'ganjiwang',
         }],
-        onFilter: (value, record) => record.sex.indexOf(value) === 0,
+        onFilter: (value, record) => record.website.indexOf(value) === 0,
       }, {
         title: '描述',
         dataIndex: 'desc',
@@ -155,16 +174,7 @@ class Data extends Component {
         render: (text, record) => {
             return <div title={text} className="data-desc">{text}</div>
         },
-      }, {
-        title: '查看',
-        dataIndex: '_url',
-        key: '_url',
-        width:80,
-        fixed:'right',
-        render: (_url, record) => {
-              return <a href={_url}>查看</a>
-        },
-      }
+      },
 
     ];
     return <Table columns={columns}

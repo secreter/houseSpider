@@ -78,10 +78,10 @@ class Spider {
 
   async spideData (schema) {
     let urlItem = null
-    // let i = 0
+    let i = 0
     let dataList = []
     while ((urlItem = this.pop())) {
-      // if (i++ > 2) break
+      if (i++ > 2) break
       console.log('queue: ', this.queue.length)
       await this.page.goto(urlItem.url, { timeout: 0 })
       await utils.sleep(this.interval)
@@ -103,6 +103,8 @@ class Spider {
               json[node.name] = ele.innerText
             }
           })
+          json['areaNumber'] = parseInt(json['area'])||0 // 面积强制转化为数字
+
           return json
         },
         schema,

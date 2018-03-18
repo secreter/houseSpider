@@ -7,12 +7,15 @@ const UserSchema = new mongoose.Schema(
     id: String,
     username: String,
     websites: Array,
+    email: Array,
     citys: Array,
     areaRange: {
       from:Number,
       to:Number
     },
+    subscribeTime:Array,
     remark:String,
+    jobId:String,
     crontab: String       // * * * * *
   },
   {

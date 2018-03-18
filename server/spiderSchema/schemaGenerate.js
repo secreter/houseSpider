@@ -11,8 +11,8 @@ const schema58List=(citys)=>{
   return citys.map(city=>{
     let shortCity=cityMap[city]
     let newConfig58=_.cloneDeep(config58)
-    newConfig58.city=city        //这个是动态加的
-    newConfig58.website='house58'        //这个是动态加的
+    newConfig58.dataSchema.city=city        //这个是动态加的
+    newConfig58.dataSchema.website='house58'        //这个是动态加的
     newConfig58.interval=8000        //这个是动态加的
     newConfig58.seed=`http://${shortCity}.58.com/shangpucz/pn1/`
     newConfig58.urlSchema.url[0].regex=`http:\\/\\/${shortCity}.58.com\\/shangpucz\\/pn[0-2]+\\/\\?.*`
@@ -24,8 +24,8 @@ const schemaGanjiwangList=(citys)=>{
   return citys.map(city=>{
     let shortCity=cityMap[city]
     let newConfigGanjiwang=_.cloneDeep(configGanjiwang)
-    newConfigGanjiwang.city=city        //这个是动态加的
-    newConfigGanjiwang.website='ganjiwang'        //这个是动态加的
+    newConfigGanjiwang.dataSchema.city=city        //这个是动态加的
+    newConfigGanjiwang.dataSchema.website='ganjiwang'        //这个是动态加的
     newConfigGanjiwang.interval=8000        //这个是动态加的
     newConfigGanjiwang.seed=`http://${shortCity}.ganji.com/fang6/c2/`
     newConfigGanjiwang.urlSchema.url=[

@@ -2,7 +2,7 @@
  * Created by So on 2018/3/17.
  */
 import React, { Component } from 'react'
-import { Table, Button } from 'antd'
+import { Table, Button,message } from 'antd'
 import axios from 'axios'
 import '../styles/data.css'
 
@@ -29,7 +29,7 @@ class User extends Component {
   }
 
   getData (page = this.state.curPage) {
-    axios.post('/house/getUser', {
+    axios.post('/user/getUser', {
       offset:(page-1)*this.state.size
     })
       .then((response) => {
@@ -89,82 +89,64 @@ class User extends Component {
     const {sortedInfo}=this.state
     const columns = [
       {
-        title:'图片',
-        dataIndex:'picture',
-        key:'picture',
-        fixed:'left',
-        render: (url, record) => {
-          return <img src={url} width={60}></img>
-        },
+        title:'用户名',
+        dataIndex:'username',
+        key:'username',
+        width:160
       },
       {
-        title: '标题',
-        dataIndex: 'title',
-        key: 'title',
-        width:160
+        title: '邮箱',
+        dataIndex: 'email',
+        key: 'email',
+        width:240
       }, {
-        title: '价格',
-        dataIndex: 'price',
-        key: 'price',
-        width:80
-      }, {
-        title: '面积',
-        dataIndex: 'area',
-        key: 'area',
-        width:80,
-        sorter: (a, b) => parseInt(a.area) - parseInt(b.area),
-        sortOrder: sortedInfo.columnKey === 'area' && sortedInfo.order,
-      }, {
-        title: '城市',
-        dataIndex: 'city',
-        key: 'city',
-        width:80
-      }, {
-        title: '联系人',
-        dataIndex: 'connectPerson',
-        key: 'connectPerson',
-        width:80
-      }, {
-        title: '电话',
-        dataIndex: 'phoneNumber',
-        key: 'phoneNumber',
-        width:120
-      }, {
-        title: '发型师',
-        dataIndex: 'hairstylist',
-        key: 'hairstylist',
-      }, {
-        title: '日期',
-        dataIndex: 'date',
-        key: 'date',
-      }, {
-        title: '网站',
-        dataIndex: 'website',
-        key: 'website',
-        filters: [{
-          text: '58同城',
-          value: 'house58',
-        }, {
-          text: '安居客',
-          value: 'anjuke',
-        }],
-        onFilter: (value, record) => record.sex.indexOf(value) === 0,
-      }, {
-        title: '描述',
-        dataIndex: 'desc',
-        key: 'desc',
+        title: '订阅城市',
+        dataIndex: 'citys',
+        key: 'citys',
         width:200,
-        render: (text, record) => {
-          return <div title={text} className="data-desc">{text}</div>
+        render: (list, record) => {
+          return <div  className="data-desc">{list.join(', ')}</div>
         },
       }, {
-        title: '查看',
-        dataIndex: '_url',
-        key: '_url',
+        title: '订阅网站',
+        dataIndex: 'websites',
+        key: 'websites',
+        width:200,
+        render: (list, record) => {
+          return <div  className="data-desc">{list.join(', ')}</div>
+        }
+      }, {
+        title: '订阅面积',
+        dataIndex: 'areaRange',
+        key: 'areaRange',
+        width:160,
+        render: (areaRange, record) => {
+          return <div  className="data-desc">{areaRange.from}--{areaRange.to}</div>
+        }
+      }, {
+        title: '通知时间',
+        dataIndex: 'subscribeTime',
+        key: 'subscribeTime',
+        width:200,
+        render: (list, record) => {
+          return <div  className="data-desc">{list.join(', ')}</div>
+        }
+      }, {
+        title: '创建时间',
+        dataIndex: 'created',
+        key: 'created',
+        width:200,
+        render: (time, record) => {
+          return <div  className="data-desc">{new Date(time).toLocaleString()}</div>
+        }
+      }, {
+        title: '管理',
+        dataIndex: 'id',
+        key: 'id',
         width:80,
         fixed:'right',
-        render: (_url, record) => {
-          return <a href={_url}>查看</a>
+        render: (id, record) => {
+          return <Button type={'danger'} onClick={this.bindClickRemove.bind(this,id)}>删除</Button>
         },
       }
 
@@ -181,6 +163,19 @@ class User extends Component {
                     total: this.state.total
                   }} />;
   }
+  bindClickRemove=(id)=>{
+    axios.post('/user/deleteUser', {
+      id
+    })
+      .then((response) => {
+        if(response.data.status==='success'){
+          this.getData()
+          message.success('删除成功！')
+        }
+      })
+      .catch( (error) =>{
+        console.log(error);
+      });
+  }
 }
-
 export default User

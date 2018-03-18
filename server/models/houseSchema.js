@@ -17,6 +17,7 @@ const HouseSchema = new mongoose.Schema(
     price_day: String,
     picture: String,
     area: String,
+    areaNumber: Number,
     miankuan: String,
     jingsheng: String,
     cengao: String,

@@ -9,8 +9,10 @@
     font-weight:bolder;
 }
 .subscribe-body{
-    margin: 20px 0;
-    background-color: #eee;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 6px;
+    background-color: #f1f1f1;
 }
 .-row{
     margin: 5px;

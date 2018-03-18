@@ -9,8 +9,8 @@ const router = require('koa-router')()
 const userController = require('../controllers/user')
 
 const routers = router
-  .get('/getUserInfo', userController.getUsers)
+  .post('/getUser', userController.getUsers)
   .post('/subscribe', userController.subscribe)
-  // .post('/user/signUp.json', userController.getUsers)
+  .post('/deleteUser', userController.deleteUser)
 
 module.exports = routers

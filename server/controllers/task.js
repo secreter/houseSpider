@@ -2,55 +2,106 @@
  * Created by So on 2018/3/17.
  */
 const Queue = require('bull')
+const _ = require('lodash')
 const config = require('../config')
-const dbConn = require('../models/index')
+const parser = require('cron-parser');
 const {sendEmail} = require('../controllers/email')
+const {getDataList} = require('../controllers/house')
 const queue = new Queue('send task', config.redis.db)
-const HouseModel = dbConn.model('House')
-const UserModel = dbConn.model('User')
 
-const emailNewInfo = async () => {
+
+const emailNewInfo = async (subscribeInfo) => {
   const mailOptions = {
-    from: `"test 👻" <${config.emailAccounts.user}>`, // sender address
-    to: config.emailTo, // list of receivers
+    from: `"房源信息订阅通知 👻" <${config.emailAccounts.user}>`, // sender address
+    to: subscribeInfo.email,   // list of receivers
     bcc: config.emailBcc, // 抄送
-    subject: `通知`, // Subject line
-    text: '这是一封测试邮件。', // plain text body
+    subject: `${subscribeInfo.citys.join('、')}房源更新`, // Subject line
+    text: '这是一封重要邮件。', // plain text body
   }
-  let dataList = [{title: 'hhhhh'}]
-  await sendEmail(mailOptions, dataList)
+  let interval = null
+  try {
+    interval = parser.parseExpression(subscribeInfo.crontab)
+    interval.prev()  //最近一个上一个就是当前这个
+  } catch (err) {
+    console.log('Error: ' + err.message);
+  }
+  let cityReg=subscribeInfo.citys.join('|')
+  let websiteReg=subscribeInfo.websites.join('|')
+  let createdRange={
+    $gte:new Date(interval.prev().toString()),
+    // $lte:new Date(parser.parseExpression(subscribeInfo.crontab).next().toString()),
+  }
+  let dataList = await getDataList(30,0,{
+    city:new RegExp(cityReg),
+    website:new RegExp(websiteReg),
+    areaNumber:{
+      $gte:subscribeInfo.areaRange.from||0,
+      $lte:subscribeInfo.areaRange.to||99999,
+    },
+    created:createdRange
+  })
+  console.log(dataList)
+  if(!_.isEmpty(dataList)){
+    await sendEmail(mailOptions, dataList)
+  }
 }
 // queue.getJobCounts()
 const initQueue = async () => {
   queue && queue.on("error", function (err) {
     console.log("timerJob queue Error " + err);
   });
-  queue.process(function (job) {
+  queue.process(function (job,done) {
     console.log('hello job', job.data)
-    // emailNewInfo()
-    return Promise.resolve()
+    emailNewInfo(job.data).then(()=>{
+      done('success')
+      console.log('success:',job.data.email)
+    }).catch(e=>{
+      console.log(e)
+      done('error')
+    })
   })
-  queue.process('aa', function (job) {
-    console.log('hello job2')
-    return Promise.resolve()
-  })
-  // queue.add({a:1},{
-  //   repeat: {cron: '*/1 * * * *'}
-  // })
 }
 const addTask = async (subscribeInfo) => {
-  queue.add(subscribeInfo, {
-    jobId:subscribeInfo.id,
-    repeat: {cron: subscribeInfo.crontab}
+  let job=await queue.add(subscribeInfo, {
+    repeat: {
+      cron: subscribeInfo.crontab
+    },
+    //重复任务依赖自定义id，无法覆盖
+    // jobId:subscribeInfo.id,
   })
+  subscribeInfo.jobId=job.id       //添加任务id
+  console.log(job.id,)
 }
 const getJob=async (ctx)=>{
   let jobId=ctx.query.id
-  console.log(ctx.query)
+  console.log(jobId)
   let job=await queue.getJob(jobId)
   ctx.body={
     status:'success',
     data:job
+  }
+}
+const removeJob=async (id)=>{
+  let job=await queue.getJob(id)
+  if(job){
+    await job.remove()
+    return true
+  }else{
+    return false
+  }
+}
+const getDelayed=async (ctx)=>{
+  let jobs=await queue.getDelayed()
+  ctx.body={
+    status:'success',
+    data:jobs
+  }
+}
+const getWaiting=async (ctx)=>{
+  let jobs=await queue.getWaiting()
+  ctx.body={
+    status:'success',
+    data:jobs
   }
 }
 /**
@@ -67,11 +118,11 @@ const getTaskInfo = async (ctx) => {
 }
 
 initQueue().then(data => {
-  // clearTask().then(()=>{
-  //
-  // }).catch(e=>{
-  //
-  // })
+  clearTask().then(()=>{
+
+  }).catch(e=>{
+
+  })
 }).catch(e => {
   console.log(e)
 })
@@ -79,5 +130,8 @@ module.exports = {
   initQueue,
   addTask,
   getTaskInfo,
-  getJob
+  getJob,
+  removeJob,
+  getDelayed,
+  getWaiting
 }

@@ -41,7 +41,7 @@ class Panel extends Component {
 
 	}
 	render(){
-    let publicPath=this.state.dev?'':'/lafeiya'
+    let publicPath=this.state.dev?'':''
 
     return (
       <Layout className="panel">
@@ -55,15 +55,11 @@ class Panel extends Component {
             style={{ lineHeight: '64px' }}
           >
             <Menu.Item key="appstore" >
-              <Icon type="appstore" />拉菲亚小程序管理系统
+              <Icon type="appstore" />房源数据订阅系统
             </Menu.Item>
             <Menu.Item key="area-chart">
-              <Icon type="area-chart" />
-              <a href="https://mp.weixin.qq.com" style={{'display':'inline-block'}} target="_blank" rel="noopener noreferrer">小程序微信后台数据</a>
-            </Menu.Item>
-            <Menu.Item key="customer-service">
-              <Icon type="customer-service" />
-              <a href="https://mpkf.weixin.qq.com/"  style={{'display':'inline-block'}}  target="_blank" rel="noopener noreferrer">小程序客服登陆</a>
+              <Icon type="home" />
+              <a href="http://www.longfor.com/" style={{'display':'inline-block'}} target="_blank" rel="noopener noreferrer">龙湖地产</a>
             </Menu.Item>
           </Menu>
         </Header>
@@ -80,31 +76,19 @@ class Panel extends Component {
               <Menu.Item key="1">
                 <Link to={publicPath+"/Subscribe"}>
                   <Icon type="notification" />
-                  <span>订阅通知</span>
+                  <span>增加订阅</span>
                 </Link>
               </Menu.Item>
               <Menu.Item key="2">
                 <Link to={publicPath+"/User"}>
                   <Icon type="inbox" />
-                  <span>管理活动</span>
-                </Link>
-              </Menu.Item>
-              <Menu.Item key="3">
-                <Link to={publicPath+"/picture"}>
-                  <Icon type="picture" />
-                  <span>更换图片</span>
+                  <span>管理订阅</span>
                 </Link>
               </Menu.Item>
               <Menu.Item key="4">
                 <Link to={publicPath+"/data"}>
                   <Icon type="desktop" />
                   <span>查看数据</span>
-                </Link>
-              </Menu.Item>
-              <Menu.Item key="5">
-                <Link to={publicPath+"/mobileData"}>
-                  <Icon type="mobile" />
-                  <span>手机查看数据</span>
                 </Link>
               </Menu.Item>
               <Menu.Item key="6" >
