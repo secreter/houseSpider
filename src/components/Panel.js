@@ -37,7 +37,7 @@ class Panel extends Component {
   		return
 		}
     sessionStorage.setItem('house_status', 0);
-    window.location.reload()
+    window.location.href='/'
 
 	}
 	render(){
