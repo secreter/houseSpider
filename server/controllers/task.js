@@ -28,8 +28,8 @@ const emailNewInfo = async (subscribeInfo) => {
   let cityReg=subscribeInfo.citys.join('|')
   let websiteReg=subscribeInfo.websites.join('|')
   let sourceTypeReg=undefined
-  if(subscribeInfo.sourceType){
-    sourceTypeReg=subscribeInfo.sourceType.join('|')
+  if(subscribeInfo.sourceTypes){
+    sourceTypeReg=subscribeInfo.sourceTypes.join('|')
   }
   let createdRange={
     $gte:new Date(interval.prev().toString()),
