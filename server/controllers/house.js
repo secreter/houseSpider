@@ -6,14 +6,45 @@ const dbConn = require('../models/index')
 const utils = require('../lib/utils')
 const HouseModel = dbConn.model('House')
 
-const insertData = async (dataList) => {
+const insertDataList = async (dataList) => {
+  let insertNum=0
   for(let i=0;i<dataList.length;i++){
-    let model = new HouseModel({
-      id: uuid(),
-      ...dataList[i]
+    let result = await HouseModel.update({
+      _url:dataList[i]._url,
+    },{
+      $setOnInsert:{
+        id: uuid(),
+        ...dataList[i]
+      }
+    },{
+      upsert:true   //whether to create the doc if it doesn't match (false)
     })
-    await model.save()
+    console.log(result)
+    insertNum+=result.n
   }
+  console.log(`total: ${dataList.length},insert: ${insertNum}`)
+}
+
+/**
+ * 用_url作为key,没有的数据才插入数据库
+ * @param data
+ * @returns {Promise.<void>}
+ */
+const insertData=async(data)=>{
+  /**
+   db.collection.update(
+   <query>,
+   { $setOnInsert: { <field1>: <value1>, ... } },
+   { upsert: true }
+   )
+   */
+  let result = await HouseModel.update({
+    _url:data._url,
+  },{
+    id: uuid(),
+    data
+  })
+  console.log(result)
 }
 
 const getDataList = async ( limit = 300,offset=0,filter={}) => {
@@ -45,6 +76,7 @@ const getData=async (ctx)=>{
 }
 module.exports={
   insertData,
+  insertDataList,
   getDataList,
   getData
 }

@@ -11,7 +11,8 @@ const HouseSchema = new mongoose.Schema(
     _url: String,
     city:String,
     title: String,
-    website: String,
+    website: String,             //网站
+    sourceType:String,          //房源类型
     price: String,
     price_month: String,
     price_day: String,

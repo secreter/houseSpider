@@ -7,6 +7,7 @@ const UserSchema = new mongoose.Schema(
     id: String,
     username: String,
     websites: Array,
+    sourceTypes: Array,
     email: Array,
     citys: Array,
     areaRange: {

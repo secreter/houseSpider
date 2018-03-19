@@ -3,7 +3,6 @@
  */
 const puppeteer = require('puppeteer')
 const utils = require('../lib/utils')
-const emailController = require('../controllers/email')
 const Spider = require('../lib/Spider')
 const houseController = require('../controllers/house')
 const {schema58List,schemaGanjiwangList,getSchemas} = require('../spiderSchema/schemaGenerate')
@@ -13,7 +12,7 @@ const configGangjiwang = require('../spiderSchema/configGangjiwang')
 // configAnjuke 在ubuntu下报Error: net::ERR_TOO_MANY_REDIRECTS
 // const schemas = [config58, configGangjiwang, configAnjuke]
 let schemas = [ configAnjuke]
-const CITYS=['beijing','tianjin','shanghai']
+const CITYS=['beijing','tianjin']
 const main = async () => {
   let browser = await puppeteer.launch({ headless: true })
   let page = await browser.newPage()
@@ -22,16 +21,16 @@ const main = async () => {
   // let dataList = await spider.start(config_58)
   // length-1 跳过安居客
   //几个网站交叉爬，避免过于频繁
-  schemas=getSchemas(CITYS)
+  schemas=schemaGanjiwangList(CITYS)
   for (let i = 0; i < schemas.length ; i++) {
     let dataList = await spider.start(schemas[i])
 
-    let oldDataList = await houseController.getDataList(500)
-    let newDataList = utils.uniqueDataList(dataList, oldDataList)
-    console.log('dataList.length:', dataList.length)
-    await houseController.insertData(newDataList)
-    console.log('newDataList.length:', newDataList.length)
-    sendList = sendList.concat(newDataList)
+    // let oldDataList = await houseController.getDataList(500)
+    // let newDataList = utils.uniqueDataList(dataList, oldDataList)
+    // console.log('dataList.length:', dataList.length)
+    await houseController.insertDataList(dataList)
+    // console.log('newDataList.length:', newDataList.length)
+    // sendList = sendList.concat(newDataList)
     console.log('i', i)
   }
   console.log(new Date())
@@ -40,9 +39,6 @@ const main = async () => {
   //   return /酒店|公寓/.test(item.desc)
   // })
   // console.log(sendList)
-  if (sendList.length > 0) {
-    // await emailController.sendTest(sendList)
-  }
   await browser.close()
 }
 main()
@@ -52,7 +48,7 @@ main()
   .catch(e => {
     console.log('catch')
     console.error(e)
-    process.exit() // 异常退出
+    process.exit(1) // 异常退出
   })
 
 // module.exports = Spider

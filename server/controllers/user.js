@@ -46,6 +46,7 @@ exports.subscribe=async (ctx)=>{
   let publishTime=ctx.request.body.publishTime||[]
   let citys=ctx.request.body.citys||[]
   let websites=ctx.request.body.websites||[]
+  let sourceTypes=ctx.request.body.sourceTypes||[]
   let areaRange=ctx.request.body.areaRange||{from:50,to:200}
   areaRange.from=areaRange.from||0
   areaRange.to=areaRange.to||99999
@@ -63,6 +64,7 @@ exports.subscribe=async (ctx)=>{
     email,
     citys,
     websites,
+    sourceTypes,
     areaRange,
     subscribeTime:publishTime,
     jobId:'',                      //添加job 的时候加上

@@ -3,12 +3,20 @@
   <component name="ChangeListManager">
     <list default="true" id="cbb4bfe5-d1e5-4505-8209-1132d42b54c4" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/controllers/house.js" afterPath="$PROJECT_DIR$/server/controllers/house.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/controllers/task.js" afterPath="$PROJECT_DIR$/server/controllers/task.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/routers/index.js" afterPath="$PROJECT_DIR$/server/routers/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/routers/task.js" afterPath="$PROJECT_DIR$/server/routers/task.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/controllers/user.js" afterPath="$PROJECT_DIR$/server/controllers/user.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/lib/Spider.js" afterPath="$PROJECT_DIR$/server/lib/Spider.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/lib/utils.js" afterPath="$PROJECT_DIR$/server/lib/utils.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/models/houseSchema.js" afterPath="$PROJECT_DIR$/server/models/houseSchema.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/models/userSchema.js" afterPath="$PROJECT_DIR$/server/models/userSchema.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/spider/app.js" afterPath="$PROJECT_DIR$/server/spider/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/spiderSchema/config58.js" afterPath="$PROJECT_DIR$/server/spiderSchema/config58.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/spiderSchema/schemaGenerate.js" afterPath="$PROJECT_DIR$/server/spiderSchema/schemaGenerate.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/view/list.ejs" afterPath="$PROJECT_DIR$/server/view/list.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Panel.js" afterPath="$PROJECT_DIR$/src/components/Panel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Data.js" afterPath="$PROJECT_DIR$/src/components/Data.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Subscribe.js" afterPath="$PROJECT_DIR$/src/components/Subscribe.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/User.js" afterPath="$PROJECT_DIR$/src/components/User.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -25,16 +33,16 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.3977747">
+    <splitter split-orientation="horizontal" split-proportion="0.4261658">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-          <file leaf-file-name="User.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/components/User.js">
+          <file leaf-file-name="Subscribe.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/components/Subscribe.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="363">
-                  <caret line="143" column="24" lean-forward="true" selection-start-line="143" selection-start-column="24" selection-end-line="143" selection-end-column="24" />
+                <state relative-caret-position="227">
+                  <caret line="245" column="25" lean-forward="true" selection-start-line="245" selection-start-column="25" selection-end-line="245" selection-end-column="25" />
                   <folding>
-                    <element signature="e#39#79#0" expanded="true" />
+                    <element signature="e#2457#3023#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -43,42 +51,10 @@
           <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/server/spider/app.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="780">
-                  <caret line="22" column="19" lean-forward="true" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+                <state relative-caret-position="234">
+                  <caret line="17" column="36" lean-forward="true" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
                   <folding>
                     <element signature="e#0#38#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/public/index.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="117">
-                  <caret line="21" column="17" lean-forward="false" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="favicon.ico" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/public/favicon.ico">
-              <provider selected="true" editor-type-id="images">
-                <state />
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Panel.js" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/components/Panel.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-156">
-                  <caret line="108" column="21" lean-forward="true" selection-start-line="108" selection-start-column="21" selection-end-line="108" selection-end-column="21" />
-                  <folding>
-                    <element signature="e#0#41#0" expanded="true" />
-                    <element signature="e#3713#4469#0" expanded="false" />
-                    <element signature="e#4556#5861#0" expanded="false" />
-                    <element signature="e#5886#6489#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -87,10 +63,37 @@
           <file leaf-file-name="Data.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/components/Data.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="246">
-                  <caret line="153" column="21" lean-forward="false" selection-start-line="153" selection-start-column="21" selection-end-line="153" selection-end-column="21" />
+                <state relative-caret-position="5109">
+                  <caret line="136" column="56" lean-forward="false" selection-start-line="136" selection-start-column="56" selection-end-line="136" selection-end-column="56" />
                   <folding>
                     <element signature="e#527#572#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="utils.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/server/lib/utils.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="565">
+                  <caret line="98" column="74" lean-forward="false" selection-start-line="98" selection-start-column="74" selection-end-line="98" selection-end-column="74" />
+                  <folding>
+                    <element signature="e#0#37#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Panel.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/components/Panel.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1287">
+                  <caret line="118" column="33" lean-forward="false" selection-start-line="118" selection-start-column="33" selection-end-line="118" selection-end-column="33" />
+                  <folding>
+                    <element signature="e#0#41#0" expanded="true" />
+                    <element signature="e#3708#4464#0" expanded="false" />
+                    <element signature="e#4551#5856#0" expanded="false" />
+                    <element signature="e#5878#6481#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -99,39 +102,51 @@
           <file leaf-file-name="Spider.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/server/lib/Spider.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="296">
-                  <caret line="131" column="3" lean-forward="true" selection-start-line="131" selection-start-column="3" selection-end-line="131" selection-end-column="3" />
+                <state relative-caret-position="409">
+                  <caret line="84" column="27" lean-forward="false" selection-start-line="84" selection-start-column="27" selection-end-line="84" selection-end-column="27" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/server/routers/index.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="234">
-                  <caret line="8" column="18" lean-forward="false" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/package.json">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="429">
-                  <caret line="74" column="11" lean-forward="true" selection-start-line="74" selection-start-column="11" selection-end-line="74" selection-end-column="11" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="registerServiceWorker.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/registerServiceWorker.js">
+          <file leaf-file-name="Queue.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/server/lib/Queue.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="312">
-                  <caret line="101" column="30" lean-forward="true" selection-start-line="101" selection-start-column="30" selection-end-line="101" selection-end-column="30" />
+                  <caret line="8" column="13" lean-forward="true" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
                   <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="configGangjiwang.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/server/spiderSchema/configGangjiwang.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="702">
+                  <caret line="18" column="22" lean-forward="true" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="user.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/server/controllers/user.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="195">
+                  <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="66" selection-end-column="16" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="config58.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/server/spiderSchema/config58.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-78">
+                  <caret line="29" column="17" lean-forward="true" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
+                  <folding>
+                    <element signature="e#146#720#0" expanded="false" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -140,11 +155,11 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-          <file leaf-file-name="task.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="task.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/server/controllers/task.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="140">
-                  <caret line="53" column="22" lean-forward="false" selection-start-line="53" selection-start-column="17" selection-end-line="53" selection-end-column="22" />
+                <state relative-caret-position="257">
+                  <caret line="38" column="16" lean-forward="true" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
                   <folding>
                     <element signature="e#0#38#0" expanded="false" />
                   </folding>
@@ -152,11 +167,33 @@
               </provider>
             </entry>
           </file>
+          <file leaf-file-name="User.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/components/User.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="293">
+                  <caret line="120" column="25" lean-forward="false" selection-start-line="120" selection-start-column="25" selection-end-line="120" selection-end-column="25" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file leaf-file-name="config.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/server/config.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="585">
-                  <caret line="17" column="9" lean-forward="false" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="9" />
+                <state relative-caret-position="350">
+                  <caret line="15" column="11" lean-forward="false" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
+                  <folding>
+                    <element signature="e#0#38#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="house.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/server/routers/house.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="273">
+                  <caret line="9" column="12" lean-forward="false" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
                   <folding>
                     <element signature="e#0#38#0" expanded="false" />
                   </folding>
@@ -167,8 +204,8 @@
           <file leaf-file-name="schemaGenerate.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/server/spiderSchema/schemaGenerate.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="429">
-                  <caret line="34" column="11" lean-forward="false" selection-start-line="31" selection-start-column="9" selection-end-line="34" selection-end-column="11" />
+                <state relative-caret-position="950">
+                  <caret line="85" column="34" lean-forward="true" selection-start-line="85" selection-start-column="34" selection-end-line="85" selection-end-column="34" />
                   <folding>
                     <element signature="e#0#38#0" expanded="false" />
                   </folding>
@@ -176,41 +213,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/server/app.js">
+          <file leaf-file-name="houseSchema.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/server/models/houseSchema.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="65">
-                  <caret line="22" column="7" lean-forward="false" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="7" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="webpack.config.prod.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/config/webpack.config.prod.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-12663">
-                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="build.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/scripts/build.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-936">
-                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="paths.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/config/paths.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="179">
-                  <caret line="36" column="66" lean-forward="false" selection-start-line="36" selection-start-column="66" selection-end-line="36" selection-end-column="66" />
+                <state relative-caret-position="338">
+                  <caret line="14" column="14" lean-forward="false" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="14" />
                   <folding />
                 </state>
               </provider>
@@ -228,22 +235,40 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="list.ejs" pinned="false" current-in-tab="false">
+          <file leaf-file-name="list.ejs" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/server/view/list.ejs">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="429">
-                  <caret line="134" column="22" lean-forward="true" selection-start-line="134" selection-start-column="22" selection-end-line="134" selection-end-column="22" />
+                <state relative-caret-position="273">
+                  <caret line="130" column="45" lean-forward="false" selection-start-line="130" selection-start-column="45" selection-end-line="130" selection-end-column="45" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="user.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/server/routers/user.js">
+          <file leaf-file-name="userSchema.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/server/models/userSchema.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="507">
-                  <caret line="15" column="6" lean-forward="false" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
-                  <folding />
+                <state relative-caret-position="111">
+                  <caret line="9" column="15" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="15" />
+                  <folding>
+                    <element signature="e#0#38#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="house.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/server/controllers/house.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-1443">
+                  <caret line="19" column="75" lean-forward="false" selection-start-line="19" selection-start-column="75" selection-end-line="19" selection-end-column="75" />
+                  <folding>
+                    <element signature="e#0#38#0" expanded="false" />
+                    <marker date="1521477525138" expanded="true" signature="727:1774" ph="..." />
+                    <marker date="1521477525138" expanded="true" signature="806:1774" ph="..." />
+                    <marker date="1521477525138" expanded="true" signature="837:1774" ph="..." />
+                    <marker date="1521477525138" expanded="true" signature="847:1774" ph="..." />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -264,6 +289,8 @@
     <findStrings>
       <find>disableHostCheck</find>
       <find>lafeiya</find>
+      <find>sourceType</find>
+      <find>seed</find>
     </findStrings>
     <dirStrings>
       <dir>D:\study\nodeitem\reactitem\houseSpider\scripts</dir>
@@ -292,34 +319,34 @@
         <option value="$PROJECT_DIR$/server/controllers/email.js" />
         <option value="$PROJECT_DIR$/config/webpackDevServer.config.js" />
         <option value="$PROJECT_DIR$/server/models/index.js" />
-        <option value="$PROJECT_DIR$/server/lib/utils.js" />
         <option value="$PROJECT_DIR$/server/spiderSchema/cityMap.js" />
-        <option value="$PROJECT_DIR$/server/spiderSchema/config58.js" />
-        <option value="$PROJECT_DIR$/src/components/Subscribe.js" />
         <option value="$PROJECT_DIR$/server/spiderSchema/configGangjiwang.js" />
         <option value="$PROJECT_DIR$/src/styles/subscribe.css" />
         <option value="$PROJECT_DIR$/server/routers/user.js" />
-        <option value="$PROJECT_DIR$/src/components/User.js" />
-        <option value="$PROJECT_DIR$/server/controllers/house.js" />
-        <option value="$PROJECT_DIR$/server/models/houseSchema.js" />
-        <option value="$PROJECT_DIR$/server/models/userSchema.js" />
-        <option value="$PROJECT_DIR$/server/controllers/user.js" />
         <option value="$PROJECT_DIR$/server/ecosystem.json" />
         <option value="$PROJECT_DIR$/config/paths.js" />
         <option value="$PROJECT_DIR$/server/config.js" />
-        <option value="$PROJECT_DIR$/server/lib/Spider.js" />
-        <option value="$PROJECT_DIR$/server/spiderSchema/schemaGenerate.js" />
-        <option value="$PROJECT_DIR$/src/components/Data.js" />
         <option value="$PROJECT_DIR$/server/app.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/server/spider/app.js" />
         <option value="$PROJECT_DIR$/server/routers/task.js" />
         <option value="$PROJECT_DIR$/src/registerServiceWorker.js" />
         <option value="$PROJECT_DIR$/server/routers/index.js" />
         <option value="$PROJECT_DIR$/src/components/Panel.js" />
-        <option value="$PROJECT_DIR$/server/view/list.ejs" />
+        <option value="$PROJECT_DIR$/server/lib/utils.js" />
+        <option value="$PROJECT_DIR$/server/spiderSchema/config58.js" />
+        <option value="$PROJECT_DIR$/server/models/houseSchema.js" />
+        <option value="$PROJECT_DIR$/server/spiderSchema/schemaGenerate.js" />
+        <option value="$PROJECT_DIR$/server/controllers/house.js" />
+        <option value="$PROJECT_DIR$/src/components/Data.js" />
         <option value="$PROJECT_DIR$/server/controllers/task.js" />
+        <option value="$PROJECT_DIR$/server/models/userSchema.js" />
+        <option value="$PROJECT_DIR$/server/lib/Spider.js" />
+        <option value="$PROJECT_DIR$/server/spider/app.js" />
+        <option value="$PROJECT_DIR$/src/components/Subscribe.js" />
+        <option value="$PROJECT_DIR$/server/controllers/user.js" />
+        <option value="$PROJECT_DIR$/src/components/User.js" />
+        <option value="$PROJECT_DIR$/server/view/list.ejs" />
       </list>
     </option>
   </component>
@@ -745,9 +772,9 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="npm.server" />
-        <item index="1" class="java.lang.String" itemvalue="npm.spider" />
-        <item index="2" class="java.lang.String" itemvalue="npm.start" />
+        <item index="0" class="java.lang.String" itemvalue="npm.spider" />
+        <item index="1" class="java.lang.String" itemvalue="npm.start" />
+        <item index="2" class="java.lang.String" itemvalue="npm.server" />
         <item index="3" class="java.lang.String" itemvalue="npm.build" />
         <item index="4" class="java.lang.String" itemvalue="npm.pm2" />
       </list>
@@ -767,12 +794,12 @@
       <workItem from="1521213508471" duration="8310000" />
       <workItem from="1521252412340" duration="17609000" />
       <workItem from="1521276181184" duration="27601000" />
-      <workItem from="1521347487383" duration="43635000" />
+      <workItem from="1521347487383" duration="57445000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99189000" />
+    <option name="totallyTimeSpent" value="112999000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1102" extended-state="0" />
@@ -781,12 +808,12 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22354212" sideWeight="0.2854914" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28935698" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16630669" sideWeight="0.2857143" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33259425" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Graph Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26940134" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22354212" sideWeight="0.7145086" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16630669" sideWeight="0.71428573" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Graph Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -835,13 +862,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/config/env.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="12" column="50" lean-forward="false" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.eslintignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -973,33 +993,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/spiderSchema/configGangjiwang.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="11" column="7" lean-forward="false" selection-start-line="9" selection-start-column="6" selection-end-line="11" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/spiderSchema/config58.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="767">
-          <caret line="28" column="12" lean-forward="false" selection-start-line="28" selection-start-column="2" selection-end-line="28" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Subscribe.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2769">
-          <caret line="118" column="29" lean-forward="true" selection-start-line="118" selection-start-column="29" selection-end-line="118" selection-end-column="29" />
-          <folding>
-            <element signature="e#39#79#0" expanded="false" />
-            <element signature="e#240#265#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/styles/subscribe.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
@@ -1008,68 +1001,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/routers/house.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="9" column="12" lean-forward="false" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#38#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/models/houseSchema.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="19" column="14" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="14" />
-          <folding>
-            <marker date="1521357454987" expanded="true" signature="158:768" ph="{&quot;id&quot;: String...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/lib/utils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="77" column="23" lean-forward="false" selection-start-line="77" selection-start-column="12" selection-end-line="77" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#37#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/controllers/email.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="897">
           <caret line="36" column="21" lean-forward="false" selection-start-line="36" selection-start-column="14" selection-end-line="36" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/models/userSchema.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="17" column="17" lean-forward="false" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#38#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/controllers/house.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="2" column="3" lean-forward="false" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#38#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/controllers/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="57" column="10" lean-forward="false" selection-start-line="57" selection-start-column="10" selection-end-line="57" selection-end-column="10" />
           <folding />
         </state>
       </provider>
@@ -1114,52 +1049,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="17" column="9" lean-forward="false" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#38#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
           <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding>
             <marker date="1521221792634" expanded="true" signature="876:891" ph="&lt;div/&gt;" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/User.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="143" column="24" lean-forward="true" selection-start-line="143" selection-start-column="24" selection-end-line="143" selection-end-column="24" />
-          <folding>
-            <element signature="e#39#79#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Data.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="153" column="21" lean-forward="false" selection-start-line="153" selection-start-column="21" selection-end-line="153" selection-end-column="21" />
-          <folding>
-            <element signature="e#527#572#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/spiderSchema/schemaGenerate.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="34" column="11" lean-forward="false" selection-start-line="31" selection-start-column="9" selection-end-line="34" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#38#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1185,14 +1080,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/lib/Spider.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="131" column="3" lean-forward="true" selection-start-line="131" selection-start-column="3" selection-end-line="131" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="429">
@@ -1206,16 +1093,6 @@
         <state relative-caret-position="312">
           <caret line="101" column="30" lean-forward="true" selection-start-line="101" selection-start-column="30" selection-end-line="101" selection-end-column="30" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/spider/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="22" column="19" lean-forward="true" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#38#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1235,19 +1112,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Panel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-156">
-          <caret line="108" column="21" lean-forward="true" selection-start-line="108" selection-start-column="21" selection-end-line="108" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-            <element signature="e#3713#4469#0" expanded="false" />
-            <element signature="e#4556#5861#0" expanded="false" />
-            <element signature="e#5886#6489#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/routers/task.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
@@ -1258,21 +1122,186 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/view/list.ejs">
+    <entry file="file://$PROJECT_DIR$/src/components/Panel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="134" column="22" lean-forward="true" selection-start-line="134" selection-start-column="22" selection-end-line="134" selection-end-column="22" />
+        <state relative-caret-position="1287">
+          <caret line="118" column="33" lean-forward="false" selection-start-line="118" selection-start-column="33" selection-end-line="118" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#3708#4464#0" expanded="false" />
+            <element signature="e#4551#5856#0" expanded="false" />
+            <element signature="e#5878#6481#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/lib/Queue.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="8" column="13" lean-forward="true" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/lib/utils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="565">
+          <caret line="98" column="74" lean-forward="false" selection-start-line="98" selection-start-column="74" selection-end-line="98" selection-end-column="74" />
+          <folding>
+            <element signature="e#0#37#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/spiderSchema/config58.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-78">
+          <caret line="29" column="17" lean-forward="true" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
+          <folding>
+            <element signature="e#146#720#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="15" column="11" lean-forward="false" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
+          <folding>
+            <element signature="e#0#38#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/routers/house.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="9" column="12" lean-forward="false" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#38#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/spiderSchema/schemaGenerate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="950">
+          <caret line="85" column="34" lean-forward="true" selection-start-line="85" selection-start-column="34" selection-end-line="85" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#38#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5109">
+          <caret line="136" column="56" lean-forward="false" selection-start-line="136" selection-start-column="56" selection-end-line="136" selection-end-column="56" />
+          <folding>
+            <element signature="e#527#572#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/spiderSchema/configGangjiwang.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="702">
+          <caret line="18" column="22" lean-forward="true" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/controllers/house.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1443">
+          <caret line="19" column="75" lean-forward="false" selection-start-line="19" selection-start-column="75" selection-end-line="19" selection-end-column="75" />
+          <folding>
+            <element signature="e#0#38#0" expanded="false" />
+            <marker date="1521477525138" expanded="true" signature="727:1774" ph="..." />
+            <marker date="1521477525138" expanded="true" signature="806:1774" ph="..." />
+            <marker date="1521477525138" expanded="true" signature="837:1774" ph="..." />
+            <marker date="1521477525138" expanded="true" signature="847:1774" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/controllers/task.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="53" column="22" lean-forward="false" selection-start-line="53" selection-start-column="17" selection-end-line="53" selection-end-column="22" />
+        <state relative-caret-position="257">
+          <caret line="38" column="16" lean-forward="true" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
           <folding>
             <element signature="e#0#38#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/lib/Spider.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="409">
+          <caret line="84" column="27" lean-forward="false" selection-start-line="84" selection-start-column="27" selection-end-line="84" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/spider/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="17" column="36" lean-forward="true" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#38#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/controllers/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="66" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/models/userSchema.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="111">
+          <caret line="9" column="15" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#38#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Subscribe.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="245" column="25" lean-forward="true" selection-start-line="245" selection-start-column="25" selection-end-line="245" selection-end-column="25" />
+          <folding>
+            <element signature="e#2457#3023#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/User.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="120" column="25" lean-forward="false" selection-start-line="120" selection-start-column="25" selection-end-line="120" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/models/houseSchema.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="14" column="14" lean-forward="false" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/view/list.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="130" column="45" lean-forward="false" selection-start-line="130" selection-start-column="45" selection-end-line="130" selection-end-column="45" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -21,9 +21,13 @@ const CITYS=[{
 },{
   key:'tianjin',
   value:'天津'
+}]
+const SOURCETYPES=[{
+  key:'personal',
+  value:'个人'
 },{
-  key:'shanghai',
-  value:'上海'
+  key:'agent',
+  value:'中介'
 }]
 export default class User extends Component {
   constructor (props){
@@ -34,6 +38,7 @@ export default class User extends Component {
       email:'',
       citys:['beijing'],
       websites:['house58'],
+      sourceTypes:['personal'],
       areaRange:{
         from:50,
         to:200
@@ -44,7 +49,7 @@ export default class User extends Component {
 
   }
   render(){
-    const {publishTime,email,citys,websites,areaRange}=this.state
+    const {publishTime,email,citys,websites,areaRange,sourceTypes}=this.state
     const inputStyle={
       width:'100%'
     }
@@ -103,6 +108,24 @@ export default class User extends Component {
               >
                 {
                   CITYS.map(item=>{
+                    return <Option key={item.key}>{item.value}</Option>
+                  })
+                }
+              </Select>
+            </Col>
+          </Row>
+          <Row className="-row" gutter={16}>
+            <Col className="-label" span={6}>房源类型：</Col>
+            <Col span={14}>
+              <Select
+                mode="multiple"
+                size={'large'}
+                defaultValue={sourceTypes}
+                onChange={this.handleSourceTypeChange}
+                style={inputStyle}
+              >
+                {
+                  SOURCETYPES.map(item=>{
                     return <Option key={item.key}>{item.value}</Option>
                   })
                 }
@@ -181,6 +204,11 @@ export default class User extends Component {
       citys:selectedList
     })
   }
+  handleSourceTypeChange=(selectedList)=>{
+    this.setState({
+      sourceTypes:selectedList
+    })
+  }
   handleAreaChange=(key,e)=>{
     const {areaRange}=this.state
     this.setState({
@@ -214,7 +242,7 @@ export default class User extends Component {
     })
   }
   handleSubmit=()=>{
-    const {username,publishTime,email,citys,websites,areaRange}=this.state
+    const {username,publishTime,email,citys,websites,areaRange,sourceTypes}=this.state
     if(!this.validate()){
       return
     }
@@ -224,6 +252,7 @@ export default class User extends Component {
       email,
       citys,
       websites,
+      sourceTypes,
       areaRange
     }).then(response=>{
       message.success('订阅成功！')

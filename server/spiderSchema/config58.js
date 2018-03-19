@@ -28,6 +28,7 @@ const config58 = {
   },
   dataSchema: {
     root: 'html',
+    params:{},      //携带额外参数
     data: [
       {
         name: 'title',

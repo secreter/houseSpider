@@ -122,6 +122,19 @@ class Data extends Component {
         width:80,
         sorter: (a, b) => parseInt(a.area) - parseInt(b.area),
         sortOrder: sortedInfo.columnKey === 'area' && sortedInfo.order,
+      },{
+        title: '房源类型',
+        dataIndex: 'sourceType',
+        key: 'sourceType',
+        width:80,
+        filters: [{
+          text: '个人',
+          value: 'personal',
+        }, {
+          text: '中介',
+          value: 'agent',
+        }],
+        onFilter: (value, record) => record.sourceType&&record.sourceType.indexOf(value) === 0,
       }, {
         title: '城市',
         dataIndex: 'city',
@@ -133,9 +146,6 @@ class Data extends Component {
         }, {
           text: '天津',
           value: 'tianjin',
-        },{
-          text: '上海',
-          value: 'shanghai',
         }],
         onFilter: (value, record) => record.city.indexOf(value) === 0,
       }, {

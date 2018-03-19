@@ -115,6 +115,14 @@ class User extends Component {
         render: (list, record) => {
           return <div  className="data-desc">{list.join(', ')}</div>
         }
+      },{
+        title: '订阅类型',
+        dataIndex: 'sourceTypes',
+        key: 'sourceTypes',
+        width:200,
+        render: (list, record) => {
+          return <div  className="data-desc">{list?list.join(', '):''}</div>
+        }
       }, {
         title: '订阅面积',
         dataIndex: 'areaRange',

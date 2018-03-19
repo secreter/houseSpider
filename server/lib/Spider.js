@@ -46,7 +46,7 @@ class Spider {
    */
   async spideUrls (regexList = [], deepth = 0, link = this.seed) {
     if (deepth > this.maxDeepth) return []
-    await this.page.goto(link, { timeout: 0 })
+    await this.page.goto(link, { timeout: 90000 })  //90s
     // 休眠，反爬虫，同时为了加载完成
     await utils.sleep(this.interval)
     // 爬取页面所有urls
@@ -81,7 +81,7 @@ class Spider {
     // let i = 0
     let dataList = []
     while ((urlItem = this.pop())) {
-      // if (i++ > 2) break
+      // if (i++ > 6) break
       console.log('queue: ', this.queue.length)
       await this.page.goto(urlItem.url, { timeout: 0 })
       await utils.sleep(this.interval)
@@ -89,8 +89,10 @@ class Spider {
         (schema, urlItem) => {
           let json = {}
           json['_url'] = urlItem.url
-          json['city'] = schema.city
-          json['website'] = schema.website  //添加的一些额外信息
+          json={
+            ...json,
+            ...schema.params
+          }  //添加的一些额外信息
           schema.data.forEach(node => {
             let ele = document.querySelector(node.selector)
             if (ele === null) {

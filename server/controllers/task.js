@@ -27,6 +27,7 @@ const emailNewInfo = async (subscribeInfo) => {
   }
   let cityReg=subscribeInfo.citys.join('|')
   let websiteReg=subscribeInfo.websites.join('|')
+  let sourceTypeReg=subscribeInfo.sourceType.join('|')
   let createdRange={
     $gte:new Date(interval.prev().toString()),
     // $lte:new Date(parser.parseExpression(subscribeInfo.crontab).next().toString()),
@@ -34,6 +35,7 @@ const emailNewInfo = async (subscribeInfo) => {
   let dataList = await getDataList(30,0,{
     city:new RegExp(cityReg),
     website:new RegExp(websiteReg),
+    sourceType:new RegExp(sourceTypeReg),
     areaNumber:{
       $gte:subscribeInfo.areaRange.from||0,
       $lte:subscribeInfo.areaRange.to||99999,
@@ -63,6 +65,7 @@ const initQueue = async () => {
 }
 const addTask = async (subscribeInfo) => {
   let job=await queue.add(subscribeInfo, {
+    attempts:3, //失败后重试次数
     repeat: {
       cron: subscribeInfo.crontab
     },

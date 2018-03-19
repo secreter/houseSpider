@@ -11,7 +11,7 @@ const moment=require('moment')
  */
 const getPageUrlsFnGenerator = (selector, attribute) => async (
   page,
-  deepth = 0
+  deepth = 0,
 ) => {
   /*
   page的所有方法都在另一个子进程里，无法传递一个方法进去，于是定义方法就定义在子进程内
@@ -25,7 +25,7 @@ const getPageUrlsFnGenerator = (selector, attribute) => async (
       let urls = eles.map(ele => {
         return {
           url: attribute === 'href' ? ele.href : ele.getAttribute(attribute), // 获取的元素链接，有的在data-link,link上，有的在href
-          deepth // 爬取深度
+          deepth, // 爬取深度
         }
       })
       // 必须保证获取到的链接是一个合法的url
