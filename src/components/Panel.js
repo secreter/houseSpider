@@ -105,7 +105,7 @@ class Panel extends Component {
               <Route path={publicPath+"/picture"} component={ChangPicture}/>
               <Route path={publicPath+"/myEditor"} component={MyEditor}/>
               <Route path={publicPath+"/mobileData"} component={MobileData}/>
-              <Route path={publicPath+"/*"} component={Subscribe}/>
+              {/*<Route path={publicPath+"/*"} component={Subscribe}/>*/}
             </Switch>
           </div>
         </Layout>
@@ -116,7 +116,7 @@ class Panel extends Component {
   	let publicPath=this.state.dev?'':'/lafeiya'
     return (
 	      <div className="panel">
-          <div className="logo" >qeqwe</div>
+          <div className="logo" ></div>
 	      	<Menu
 		        onClick={this.handleClick}
 		        selectedKeys={[this.state.current]}
@@ -180,9 +180,6 @@ class Panel extends Component {
 								<span>退出登录</span>
 							</Menu.Item>
 						</Menu>
-
-
-
 			    </div>
 			    <div className="panel_main">
 			    	<Switch>

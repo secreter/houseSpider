@@ -74,7 +74,6 @@ const addTask = async (subscribeInfo) => {
 }
 const getJob=async (ctx)=>{
   let jobId=ctx.query.id
-  console.log(jobId)
   let job=await queue.getJob(jobId)
   ctx.body={
     status:'success',
@@ -99,6 +98,14 @@ const getDelayed=async (ctx)=>{
 }
 const getWaiting=async (ctx)=>{
   let jobs=await queue.getWaiting()
+  ctx.body={
+    status:'success',
+    data:jobs
+  }
+}
+
+const getFailed=async (ctx)=>{
+  let jobs=await queue.getFailed()
   ctx.body={
     status:'success',
     data:jobs
@@ -133,5 +140,6 @@ module.exports = {
   getJob,
   removeJob,
   getDelayed,
-  getWaiting
+  getWaiting,
+  getFailed
 }

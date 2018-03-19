@@ -22,7 +22,7 @@ const main = async () => {
   // let dataList = await spider.start(config_58)
   // length-1 跳过安居客
   //几个网站交叉爬，避免过于频繁
-  schemas=schemaGanjiwangList(CITYS)
+  schemas=getSchemas(CITYS)
   for (let i = 0; i < schemas.length ; i++) {
     let dataList = await spider.start(schemas[i])
 

@@ -6,6 +6,8 @@
  */
 
 const router = require('koa-router')()
+const path = require('path')
+const fs = require('fs')
 
 // const home = require('./home')
 const user = require('./user')
@@ -20,8 +22,10 @@ router.use('/admin', admin.routes(), admin.allowedMethods())
 router.use('/house', house.routes(), house.allowedMethods())
 router.use('/task', task.routes(), task.allowedMethods())
 // router.use('/error', error.routes(), error.allowedMethods())
-router.use(async (ctx, next) => {
-  // redirect to named route
-  await ctx.redirect(ctx.router.url('/'));
+//解决前端路由刷新404问题
+router.get('/:other',async (ctx, next) => {
+  let filePath=path.join(__dirname , '..','..','build','index.html')
+  ctx.type='html'
+  ctx.body=fs.createReadStream(filePath);
 })
 module.exports = router

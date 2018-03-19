@@ -10,6 +10,7 @@ const routers = router
   .get('/getJob', taskController.getJob)
   .get('/getDelayed', taskController.getDelayed)
   .get('/getWaiting', taskController.getWaiting)
+  .get('/getFailed', taskController.getFailed)
 // .post('/user/signUp.json', userController.getUsers)
 
 module.exports = routers
