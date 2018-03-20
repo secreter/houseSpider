@@ -2,7 +2,6 @@
  * Created by So on 2018/3/17.
  */
 const puppeteer = require('puppeteer')
-const utils = require('../lib/utils')
 const Spider = require('../lib/Spider')
 const houseController = require('../controllers/house')
 const {schema58List,schemaGanjiwangList,getSchemas} = require('../spiderSchema/schemaGenerate')
@@ -11,34 +10,29 @@ const configAnjuke = require('../spiderSchema/configAnjuke')
 const configGangjiwang = require('../spiderSchema/configGangjiwang')
 // configAnjuke 在ubuntu下报Error: net::ERR_TOO_MANY_REDIRECTS
 // const schemas = [config58, configGangjiwang, configAnjuke]
+let userAgent='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36'
 let schemas = [ configAnjuke]
 const CITYS=['beijing','tianjin']
 const main = async () => {
-  let browser = await puppeteer.launch({ headless: true })
+  let browser = await puppeteer.launch({
+    // slowMo:2000,               //Slows down Puppeteer operations by the specified amount of milliseconds
+    // devtools:true,              //auto-open a DevTools panel
+    ignoreHTTPSErrors:true,      // ignore HTTPS errors
+    headless: true
+  })
   let page = await browser.newPage()
+  page.setUserAgent(userAgent)
   let spider = new Spider(page)
-  let sendList = [] // 新增的信息发送邮件
   // let dataList = await spider.start(config_58)
   // length-1 跳过安居客
   //几个网站交叉爬，避免过于频繁
-  schemas=schemaGanjiwangList(CITYS)
+  schemas=getSchemas(CITYS)
   for (let i = 0; i < schemas.length ; i++) {
     let dataList = await spider.start(schemas[i])
-
-    // let oldDataList = await houseController.getDataList(500)
-    // let newDataList = utils.uniqueDataList(dataList, oldDataList)
-    // console.log('dataList.length:', dataList.length)
     await houseController.insertDataList(dataList)
-    // console.log('newDataList.length:', newDataList.length)
-    // sendList = sendList.concat(newDataList)
     console.log('i', i)
   }
   console.log(new Date())
-  // sendList = sendList.filter(item => {
-  //   // 描述里带酒店、公寓的
-  //   return /酒店|公寓/.test(item.desc)
-  // })
-  // console.log(sendList)
   await browser.close()
 }
 main()
@@ -51,4 +45,3 @@ main()
     process.exit(1) // 异常退出
   })
 
-// module.exports = Spider

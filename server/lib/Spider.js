@@ -46,7 +46,17 @@ class Spider {
    */
   async spideUrls (regexList = [], deepth = 0, link = this.seed) {
     if (deepth > this.maxDeepth) return []
-    await this.page.goto(link, { timeout: 90000 })  //90s
+    await this.page.goto(link, {
+      waitUntil:'networkidle2',  //consider navigation to be finished when there are no more than 2 network connections for at least 500 ms.
+      timeout: 90000
+    })  //90s
+    //模拟鼠标移动
+    await this.page.mouse.move(401,350)
+    await this.page.mouse.move(270,180)
+    this.page.on('console', msg => {
+      for (let i = 0; i < msg.args().length; ++i)
+        console.log(`${i}: ${msg.args()[i]}`);
+    });
     // 休眠，反爬虫，同时为了加载完成
     await utils.sleep(this.interval)
     // 爬取页面所有urls
@@ -83,7 +93,9 @@ class Spider {
     while ((urlItem = this.pop())) {
       // if (i++ > 6) break
       console.log('queue: ', this.queue.length)
-      await this.page.goto(urlItem.url, { timeout: 0 })
+      await this.page.goto(urlItem.url, {
+        waitUntil:'networkidle2',
+        timeout: 0 })
       await utils.sleep(this.interval)
       let data = await this.page.evaluate(
         (schema, urlItem) => {
@@ -95,7 +107,11 @@ class Spider {
           }  //添加的一些额外信息
           schema.data.forEach(node => {
             let ele = document.querySelector(node.selector)
+            // console.log('url:',urlItem.url)
+            // console.log('ele:',ele)
+            // console.log('selector:',node.selector)
             if (ele === null) {
+              // console.log('null ele:',document)
               json[node.name] = null
               return
             }
@@ -106,7 +122,7 @@ class Spider {
             }
           })
           json['areaNumber'] = parseInt(json['area'])||0 // 面积强制转化为数字
-
+          console.log(JSON.stringify(json))
           return json
         },
         schema,
