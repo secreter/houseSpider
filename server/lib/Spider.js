@@ -96,34 +96,38 @@ class Spider {
       await this.page.goto(urlItem.url, {
         waitUntil:'networkidle2',
         timeout: 0 })
-      await utils.sleep(this.interval)
+      // await utils.sleep(this.interval)
       let data = await this.page.evaluate(
-        (schema, urlItem) => {
-          let json = {}
-          json['_url'] = urlItem.url
-          json={
-            ...json,
-            ...schema.params
-          }  //添加的一些额外信息
-          schema.data.forEach(node => {
-            let ele = document.querySelector(node.selector)
-            // console.log('url:',urlItem.url)
-            // console.log('ele:',ele)
-            // console.log('selector:',node.selector)
-            if (ele === null) {
-              // console.log('null ele:',document)
-              json[node.name] = null
-              return
-            }
-            if (node.attribute) {
-              json[node.name] = ele.getAttribute(node.attribute)
-            } else {
-              json[node.name] = ele.innerText
-            }
+        async (schema, urlItem) => {
+          return new Promise(async (resolve,reject)=>{
+            setTimeout(()=>{
+              let json = {}
+              json['_url'] = urlItem.url
+              json={
+                ...json,
+                ...schema.params
+              }  //添加的一些额外信息
+              schema.data.forEach(node => {
+                let ele = document.querySelector(node.selector)
+                // console.log('url:',urlItem.url)
+                // console.log('ele:',ele)
+                // console.log('selector:',node.selector)
+                if (ele === null) {
+                  // console.log('null ele:',document)
+                  json[node.name] = null
+                  return
+                }
+                if (node.attribute) {
+                  json[node.name] = ele.getAttribute(node.attribute)
+                } else {
+                  json[node.name] = ele.innerText
+                }
+              })
+              json['areaNumber'] = parseInt(json['area'])||0 // 面积强制转化为数字
+              console.log(JSON.stringify(json))
+              resolve(json)
+            },5000)
           })
-          json['areaNumber'] = parseInt(json['area'])||0 // 面积强制转化为数字
-          console.log(JSON.stringify(json))
-          return json
         },
         schema,
         urlItem

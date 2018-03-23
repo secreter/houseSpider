@@ -3,13 +3,14 @@
  */
 const puppeteer = require('puppeteer')
 const Spider = require('../lib/Spider')
+const config = require('../config')
+const utils = require('../lib/utils')
 const houseController = require('../controllers/house')
 const {schema58List,schemaGanjiwangList,getSchemas} = require('../spiderSchema/schemaGenerate')
 const config58 = require('../spiderSchema/config58')
 const configAnjuke = require('../spiderSchema/configAnjuke')
 const configGangjiwang = require('../spiderSchema/configGangjiwang')
 // configAnjuke 在ubuntu下报Error: net::ERR_TOO_MANY_REDIRECTS
-// const schemas = [config58, configGangjiwang, configAnjuke]
 let userAgent='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36'
 let schemas = [ configAnjuke]
 const CITYS=['beijing','tianjin']
@@ -33,6 +34,7 @@ const main = async () => {
     console.log('i', i)
   }
   console.log(new Date())
+  utils.sleep(config.closeDelay)
   await browser.close()
 }
 main()
