@@ -19,7 +19,7 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.68134713">
+    <splitter split-orientation="horizontal" split-proportion="0.26036268">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
           <file leaf-file-name="Subscribe.js" pinned="false" current-in-tab="false">
@@ -34,11 +34,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/server/spider/app.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="312">
-                  <caret line="19" column="22" lean-forward="false" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+                <state relative-caret-position="390">
+                  <caret line="33" column="33" lean-forward="false" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
                   <folding>
                     <element signature="e#0#38#0" expanded="false" />
                   </folding>
@@ -61,7 +61,7 @@
           <file leaf-file-name="utils.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/server/lib/utils.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="311">
+                <state relative-caret-position="2457">
                   <caret line="65" column="9" lean-forward="true" selection-start-line="65" selection-start-column="9" selection-end-line="65" selection-end-column="9" />
                   <folding>
                     <element signature="e#0#37#0" expanded="false" />
@@ -85,11 +85,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Spider.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="Spider.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/server/lib/Spider.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2069">
-                  <caret line="112" column="25" lean-forward="false" selection-start-line="111" selection-start-column="19" selection-end-line="112" selection-end-column="25" />
+                <state relative-caret-position="197">
+                  <caret line="58" column="10" lean-forward="false" selection-start-line="55" selection-start-column="7" selection-end-line="58" selection-end-column="10" />
                   <folding />
                 </state>
               </provider>
@@ -141,11 +141,11 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-          <file leaf-file-name="task.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="task.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/server/controllers/task.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="273">
-                  <caret line="36" column="3" lean-forward="true" selection-start-line="36" selection-start-column="3" selection-end-line="36" selection-end-column="3" />
+                <state relative-caret-position="-78">
+                  <caret line="60" column="19" lean-forward="false" selection-start-line="60" selection-start-column="12" selection-end-line="60" selection-end-column="19" />
                   <folding>
                     <element signature="e#0#38#0" expanded="false" />
                   </folding>
@@ -166,7 +166,7 @@
           <file leaf-file-name="config.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/server/config.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="368">
+                <state relative-caret-position="858">
                   <caret line="24" column="12" lean-forward="false" selection-start-line="24" selection-start-column="2" selection-end-line="24" selection-end-column="12" />
                   <folding>
                     <element signature="e#0#38#0" expanded="false" />
@@ -187,7 +187,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="schemaGenerate.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="schemaGenerate.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/server/spiderSchema/schemaGenerate.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="312">
@@ -329,8 +329,8 @@
         <option value="$PROJECT_DIR$/server/view/list.ejs" />
         <option value="$PROJECT_DIR$/server/controllers/task.js" />
         <option value="$PROJECT_DIR$/server/config.js" />
-        <option value="$PROJECT_DIR$/server/lib/Spider.js" />
         <option value="$PROJECT_DIR$/server/spider/app.js" />
+        <option value="$PROJECT_DIR$/server/lib/Spider.js" />
       </list>
     </option>
   </component>
@@ -369,7 +369,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -613,6 +612,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -780,25 +780,26 @@
       <workItem from="1521276181184" duration="27601000" />
       <workItem from="1521347487383" duration="71836000" />
       <workItem from="1521808445098" duration="3190000" />
+      <workItem from="1521945953448" duration="1065000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="130580000" />
+    <option name="totallyTimeSpent" value="131645000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1102" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16630669" sideWeight="0.29393938" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16630669" sideWeight="0.30257186" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2660754" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Graph Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2682927" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16630669" sideWeight="0.7060606" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26718405" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16630669" sideWeight="0.69742817" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Graph Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -1065,16 +1066,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/routers/task.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="12" column="18" lean-forward="false" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#38#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Panel.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4056">
@@ -1196,19 +1187,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/controllers/task.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="36" column="3" lean-forward="true" selection-start-line="36" selection-start-column="3" selection-end-line="36" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#38#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
+        <state relative-caret-position="858">
           <caret line="24" column="12" lean-forward="false" selection-start-line="24" selection-start-column="2" selection-end-line="24" selection-end-column="12" />
           <folding>
             <element signature="e#0#38#0" expanded="false" />
@@ -1218,11 +1199,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/lib/utils.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
+        <state relative-caret-position="2457">
           <caret line="65" column="9" lean-forward="true" selection-start-line="65" selection-start-column="9" selection-end-line="65" selection-end-column="9" />
           <folding>
             <element signature="e#0#37#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/spider/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="33" column="33" lean-forward="false" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#38#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/lib/Spider.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="58" column="10" lean-forward="false" selection-start-line="55" selection-start-column="7" selection-end-line="58" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1236,18 +1235,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/lib/Spider.js">
+    <entry file="file://$PROJECT_DIR$/server/routers/task.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2069">
-          <caret line="112" column="25" lean-forward="false" selection-start-line="111" selection-start-column="19" selection-end-line="112" selection-end-column="25" />
-          <folding />
+        <state relative-caret-position="390">
+          <caret line="12" column="18" lean-forward="false" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#38#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/spider/app.js">
+    <entry file="file://$PROJECT_DIR$/server/controllers/task.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="19" column="22" lean-forward="false" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+        <state relative-caret-position="-78">
+          <caret line="60" column="19" lean-forward="false" selection-start-line="60" selection-start-column="12" selection-end-line="60" selection-end-column="19" />
           <folding>
             <element signature="e#0#38#0" expanded="false" />
           </folding>

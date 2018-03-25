@@ -68,7 +68,7 @@ const initQueue = async () => {
 }
 const addTask = async (subscribeInfo) => {
   let job=await queue.add(subscribeInfo, {
-    attempts:3, //失败后重试次数
+    // attempts:3, //失败后重试次数。好像不是
     repeat: {
       cron: subscribeInfo.crontab
     },
