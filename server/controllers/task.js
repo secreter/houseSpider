@@ -7,7 +7,13 @@ const config = require('../config')
 const parser = require('cron-parser');
 const {sendEmail} = require('../controllers/email')
 const {getDataList} = require('../controllers/house')
-const queue = new Queue(config.redis.bullQueueName, config.redis.db)
+const queue = new Queue(config.redis.bullQueueName, {redis:
+  {
+    port: config.redis.port,
+    host: config.redis.host,
+    password: config.redis.pass
+  }
+})
 
 
 const emailNewInfo = async (subscribeInfo) => {
@@ -45,7 +51,7 @@ const emailNewInfo = async (subscribeInfo) => {
     },
     created:createdRange
   })
-  console.log(dataList)
+  // console.log(dataList)
   if(!_.isEmpty(dataList)){
     await sendEmail(mailOptions, dataList)
   }
