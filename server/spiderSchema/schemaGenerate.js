@@ -82,8 +82,8 @@ const getSchemas=(citys)=>{
   let list=[]      //交叉进行，间歇爬取
   //个人和中介，*2
   for(let i=0;i<citys.length*2;i++){
-    list.push(list58.pop())
-    list.push(listGanjiwang.pop())
+    list.push(list58.shift())
+    list.push(listGanjiwang.shift())
   }
   return list
 }

@@ -48,7 +48,7 @@ class Spider {
     if (deepth > this.maxDeepth) return []
     await this.page.goto(link, {
       waitUntil:'networkidle2',  //consider navigation to be finished when there are no more than 2 network connections for at least 500 ms.
-      timeout: 90000
+      timeout: 120000
     })  //90s
     //模拟鼠标移动
     await this.page.mouse.move(401,350)
@@ -91,7 +91,7 @@ class Spider {
     // let i = 0
     let dataList = []
     while ((urlItem = this.pop())) {
-      // if (i++ > 6) break
+      // if (i++ > 2) break
       console.log('queue: ', this.queue.length)
       await this.page.goto(urlItem.url, {
         waitUntil:'networkidle2',
