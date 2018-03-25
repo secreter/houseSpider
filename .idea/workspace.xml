@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="cbb4bfe5-d1e5-4505-8209-1132d42b54c4" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/lib/Spider.js" afterPath="$PROJECT_DIR$/server/lib/Spider.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/spider/app.js" afterPath="$PROJECT_DIR$/server/spider/app.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -36,11 +34,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/server/spider/app.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="117">
-                  <caret line="29" column="29" lean-forward="false" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
+                <state relative-caret-position="312">
+                  <caret line="19" column="22" lean-forward="false" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
                   <folding>
                     <element signature="e#0#38#0" expanded="false" />
                   </folding>
@@ -87,11 +85,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Spider.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="Spider.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/server/lib/Spider.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="392">
-                  <caret line="123" column="17" lean-forward="true" selection-start-line="123" selection-start-column="17" selection-end-line="123" selection-end-column="17" />
+                <state relative-caret-position="2069">
+                  <caret line="112" column="25" lean-forward="false" selection-start-line="111" selection-start-column="19" selection-end-line="112" selection-end-column="25" />
                   <folding />
                 </state>
               </provider>
@@ -331,8 +329,8 @@
         <option value="$PROJECT_DIR$/server/view/list.ejs" />
         <option value="$PROJECT_DIR$/server/controllers/task.js" />
         <option value="$PROJECT_DIR$/server/config.js" />
-        <option value="$PROJECT_DIR$/server/spider/app.js" />
         <option value="$PROJECT_DIR$/server/lib/Spider.js" />
+        <option value="$PROJECT_DIR$/server/spider/app.js" />
       </list>
     </option>
   </component>
@@ -781,26 +779,26 @@
       <workItem from="1521252412340" duration="17609000" />
       <workItem from="1521276181184" duration="27601000" />
       <workItem from="1521347487383" duration="71836000" />
-      <workItem from="1521808445098" duration="1875000" />
+      <workItem from="1521808445098" duration="3190000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="129265000" />
+    <option name="totallyTimeSpent" value="130580000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1102" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16630669" sideWeight="0.29305136" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2660754" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16630669" sideWeight="0.29393938" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2660754" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Graph Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2688053" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16630669" sideWeight="0.70694864" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2682927" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16630669" sideWeight="0.7060606" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Graph Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -1218,16 +1216,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/spider/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="29" column="29" lean-forward="false" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#38#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/lib/utils.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="311">
@@ -1250,9 +1238,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/lib/Spider.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="123" column="17" lean-forward="true" selection-start-line="123" selection-start-column="17" selection-end-line="123" selection-end-column="17" />
+        <state relative-caret-position="2069">
+          <caret line="112" column="25" lean-forward="false" selection-start-line="111" selection-start-column="19" selection-end-line="112" selection-end-column="25" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/spider/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="19" column="22" lean-forward="false" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#38#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

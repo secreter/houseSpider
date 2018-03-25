@@ -53,10 +53,10 @@ class Spider {
     //模拟鼠标移动
     await this.page.mouse.move(401,350)
     await this.page.mouse.move(270,180)
-    this.page.on('console', msg => {
-      for (let i = 0; i < msg.args().length; ++i)
-        console.log(`${i}: ${msg.args()[i]}`);
-    });
+    // this.page.on('console', msg => {
+    //   for (let i = 0; i < msg.args().length; ++i)
+    //     console.log(`${i}: ${msg.args()[i]}`);
+    // });
     // 休眠，反爬虫，同时为了加载完成
     await utils.sleep(this.interval)
     // 爬取页面所有urls
@@ -124,7 +124,7 @@ class Spider {
                 }
               })
               json['areaNumber'] = parseInt(json['area'])||0 // 面积强制转化为数字
-              console.log(JSON.stringify(json))
+              // console.log(JSON.stringify(json))
               resolve(json)
             },5000)
           })

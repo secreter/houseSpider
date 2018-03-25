@@ -31,7 +31,7 @@ const main = async () => {
   for (let i = 0; i < schemas.length ; i++) {
     let dataList = await spider.start(schemas[i])
     await houseController.insertDataList(dataList)
-    console.log('i', i)
+    console.log('i', i,new Date())
   }
   console.log(new Date())
   utils.sleep(config.closeDelay)
